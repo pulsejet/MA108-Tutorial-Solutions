@@ -1,9 +1,12 @@
+
 \documentclass[a4paper]{article}
 
 %% Language and font encodings
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{changepage}
+
 
 %% Sets page size and margins
 \usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
@@ -12,95 +15,624 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{indentfirst}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{setspace}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
 
-\title{Your Paper}
-\author{You}
+\title{MA108 Tutorial Solutions}
+\author{Varun Patil}
 
 \begin{document}
-\maketitle
+\maketitle 
+\vspace{-8mm}
+\begin{center}Disclaimer: This document was created Just for Fun!
+\\I am not responsible for inaccuracies, bad solutions, burnt answer sheets or any thermonuclear war that this could cause. If you point your finger at me, I will just laugh at you.\end{center}
 
-\begin{abstract}
-Your abstract.
-\end{abstract}
+\section{Tutorial Sheet 1}
+\renewcommand{\labelenumii}{(\roman{enumii})}
 
-\section{Introduction}
+\doublespacing
+\begin{enumerate}
+\item{Classify the following equations (order, linear or non-linear):}
+\begin{enumerate}
+\item{\(\frac{d^3y}{dx^3} + 4(\frac{dy}{dx})^2=y\)
+ \\Order : 3, non-linear
+}
+\item{\(\frac{dy}{dx}+2y=\sin x\)
+ \\Order : 1, linear
+}
+\item{\(y\frac{d^2y}{dx^2}+2x\frac{dy}{dx}+y=0\)
+ \\Order : 2, non-linear}
+\item{\(\frac{d^4y}{dx^4}+(\sin x)\frac{dy}{dx}+x^2y=0\)
+\\Order : 4, linear}
+\item{\((1+y^2)\frac{d^2y}{dt^2}+t\frac{d^6y}{dt^6}+y=e^t\)
+\\Order : 6, non-linear}
+\end{enumerate}
 
-Your introduction goes here! Some examples of commonly used commands and features are listed below, to help you get started. If you have a question, please use the help menu (``?'') on the top bar to search for help or ask us a question. 
-
-\section{Some examples to get started}
-
-\subsection{How to include Figures}
-
-First you have to upload the image file from your computer using the upload link the project menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded via the project menu.}
-\end{figure}
-
-\subsection{How to add Comments}
-
-Comments can be added to your project by clicking on the comment icon in the toolbar above. % * <john.hammersley@gmail.com> 2016-07-03T09:54:16.211Z:
-%
-% Here's an example comment!
-%
-To reply to a comment, simply click the reply button in the lower right corner of the comment, and you can close them when you're done.
-
-Comments can also be added to the margins of the compiled PDF using the todo command\todo{Here's a comment in the margin!}, as shown in the example on the right. You can also add inline comments:
-
-\todo[inline, color=green!40]{This is an inline comment.}
-
-\subsection{How to add Tables}
-
-Use the table and tabular commands for basic tables --- see Table~\ref{tab:widgets}, for example. 
-
-\begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
-\end{tabular}
-\caption{\label{tab:widgets}An example table.}
-\end{table}
-
-\subsection{How to write Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-
-\subsection{How to create Sections and Subsections}
-
-Use section and subsections to organize your document. Simply use the section and subsection buttons in the toolbar to create them, and we'll handle all the formatting and numbering automatically.
-
-\subsection{How to add Lists}
-
-You can make lists with automatic numbering \dots
+\item{Formulate the differential equtions represented by the following functions by eliminating the arbitrary constants $a$, $b$ and $c$}:
 
 \begin{enumerate}
-\item Like this,
-\item and like this.
+\item{$y=ax^2$
+\\$\frac{y}{x^2}=a$
+\\Differentiating both sides wrt $x$,
+\\$\frac{1}{x^2}\frac{dy}{dx} - \frac{2y}{x^3} = 0$
+}
+\item{$y-a^2=a(x-b)^2$
+\\Differentiating both sides wrt $x$,
+\\$\frac{dy}{dx}=2a(x-b)$
+\\$\frac{1}{(x-b)}\frac{dy}{dx}=2a$
+\\Differentiating both sides wrt $x$,
+\\$\frac{1}{(x-b)}\frac{d^2y}{dx^2}-\frac{1}{(x-b)^2}\frac{dy}{dx}=0$
+\\$\frac{d^2y}{dx^2}=\frac{dy}{dx}\frac{1}{(x-b)}$
+\\$x-b=\frac{\frac{dy}{dx}}{\frac{d^2y}{dx^2}}$
+\\$a=\frac{1}{2(x-b)}\frac{dy}{dx}=\frac{1}{2}\frac{d^2y}{dx^2}$
+\\Substituting $a$ and $x-b$ in original equation,
+\\$y - \frac{1}{4}(\frac{d^2y}{dx^2})^2=\frac{1}{2}\frac{d^2y}{dx^2}(\frac{\frac{d^2y}{dx^2}}{\frac{dy}{dx}})^2$
+}
+
+\item{$x^2+y^2=a^2$
+\\Differentiating both sides wrt $x$,
+\\$2x\frac{dy}{dx}+2y=0$
+}
+
+\item{$(x-a)^2+(y-b)^2=a^2$ \ ... (1)
+\\Differentiating both sides wrt $x$,
+\\$2(x-a)+2(y-b)\frac{dy}{dx}=0$ \ ... (2)
+\\$\frac{(x-a)}{(y-b)} = -\frac{dy}{dx}$ \ ... (3)
+\\Differentiating (2) wrt $x$,
+\\$1+(y-b)\frac{d^2y}{dx^2}+(\frac{dy}{dx})^2=0$
+\\$y-b=-\frac{1+(\frac{dy}{dx})^2}{\frac{d^2y}{dx^2}}$
+\\Substituting $(y-b)$ in (2),
+\\$a=x+(y-b)\frac{dy}{dx}$
+\\$a=x-\frac{1+(\frac{dy}{dx})^2}{\frac{d^2y}{dx^2}}\frac{dy}{dx}$
+\\Dividing (1) on both sides by $(y-b)^2$,
+\\$\frac{(x-a)^2}{(y-b)^2} +1 = \frac{a^2}{(y-b)^2}$
+\\$(\frac{dy}{dx})^2 +1=\frac{(x-\frac{1+(\frac{dy}{dx})^2}{\frac{d^2y}{dx^2}}\frac{dy}{dx})^2}{(\frac{1+(\frac{dy}{dx})^2}{\frac{d^2y}{dx^2}})^2}$
+}
+
+\item{$y=a\sin x + b \cos x +a$ ... (1)
+\\Differentiating both sides wrt $x$,
+\\$\frac{dy}{dx}=a\cos x - b\sin x$ ... (2)
+\\Multiply (1) by $\sin x$ and (2) by $\cos x$ and add,
+\\$y\sin x+\frac{dy}{dx}\cos x = a\sin ^2 x + a \cos ^2 x +a\sin x$
+\\$y\sin x+\frac{dy}{dx}\cos x = a(1+\sin x)$
+\\$a=\frac{y\sin x+\frac{dy}{dx}\cos x}{1+\sin x}$ ...(3)
+\\Differentiating both sides of (2) wrt $x$
+\\$\frac{d^2y}{dx^2}=-(a\sin x + b\cos x)$ ... (4)
+\\Adding (1) and (4),
+\\$y+\frac{d^2y}{dx^2}=a$
+\\From equation (4),
+\\$y+\frac{d^2y}{dx^2}=\frac{y\sin x+\frac{dy}{dx}\cos x}{1+\sin x}$
+}
+
+\item{$y=a(1-x^2)+bx +cx^3$
+\\Differentiating both sides wrt $x$
+\\$\frac{dy}{dx}=-2ax+b+3cx^2$ ...(1)
+\\Differentiating both sides wrt $x$
+\\$\frac{d^2y}{dx^2}=-2a+6cx$ ... (2)
+\\Differentiating both sides wrt $x$
+\\$\frac{d^3y}{dx^3}=6c$ ...(3)
+\\From (2) and (3),
+\\$\frac{d^2y}{dx^2}=-2a+x\frac{d^3y}{dx^3}$ ...(4)
+\\From (3), (4) and (1),
+\\$\frac{dy}{dx}=x(\frac{d^2y}{dx^2}-x\frac{d^3y}{dx^3})+b+\frac{x^2}{2}\frac{d^3y}{dx^3}$
+\\From all equations,
+\\$y=-\frac{1}{2}(\frac{d^2y}{dx^2}-x\frac{d^3y}{dx^3})(1-x^2)+(\frac{dy}{dx}-x(\frac{d^2y}{dx^2}-x\frac{d^3y}{dx^3})-\frac{x^2}{2}\frac{d^3y}{dx^3})x+ (\frac{1}{6}\frac{d^3y}{dx^3}) x^3$
+}
+
+\item{$y=cx+f(c)$
+\\Differentiating both sides wrt $x$
+\\$\frac{dy}{dx}=c$
+\\$y=\frac{dy}{dx}+f(\frac{dy}{dx})$
+
+}
 \end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
 
-\subsection{How to add Citations and a References List}
+\item{Solve the equation $x^3(\sin y)y' = 2$. Find the particular solution such that $y(x) \rightarrow  \frac{\pi}{2}$ as $x \rightarrow +\infty$.
+\\$x^3(\sin y)\frac{dy}{dx}=2$
+\\$(\sin y)dy=\frac{2}{x^3}dx$
+\\$\int(\sin y)dy=\int\frac{2}{x^2}dx$
+\\$-\cos y+c=-\frac{2}{x}$
+\\$\frac{2}{x}-\cos y+c=0$
+\\This is an implicit solution for the given differential equation.
+\\As $x\rightarrow\infty$, $\frac{2}{x}\rightarrow 0$ and as $y(x) \rightarrow  \frac{\pi}{2}$, $\cos y\rightarrow 0$
+\\$\implies c=0$
+\\$\frac{2}{x}-\cos y=0$ is the required particular solution.
+}
 
-You can upload a \verb|.bib| file containing your BibTeX entries, created with JabRef; or import your \href{https://www.overleaf.com/blog/184}{Mendeley}, CiteULike or Zotero library as a \verb|.bib| file. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|.
+\item{Prove that a curve with the property that all its normals pass through a point is a circle.
+\\Let $(x_0, y_0)$ be a point on the curve
+\\Equation of normal at $(x_0, y_0)$ is $-\frac{x_0-x}{y_0-y}=\frac{dy}{dx}$
+\\Let the point $(a, b)$ always satisfy this equation, i.e. $(x_0, y_0) \equiv (x, y)$
+\\$\implies -\frac{x-a}{y-b}=\frac{dy}{dx}$
+\\$\implies -(x-a)dx = (y-b)dy$
+\\$\implies \int -(x-a)dx = \int (y-b)dy$
+\\$\implies -(x-a)^2 + c = (y-b)^2 $
+\\$\implies (x-a)^2 + (y-b)^2 =c $
+\\This is a real curve iff $c=r^2$, where $r$ is a real number.
+\\Therefore, it is the equation of a circle with center at $(a, b)$.
+}
+\renewcommand{\labelenumii}{(\alph{enumii})}
+\item{Find the values of m for which
+\begin{enumerate}
+\item{$y=e^{mx}$ is a solution of
+\begin{enumerate}
+\item{$y'' +y'-6y=0$
+\\Substituting $y=e^{mx}$ in the given equation,
+\\$m^2e^{mx}+me^{mx}-6e^{mx}=0$
+\\$m^2+m-6=0$
+\\$(m+3)(m-2)=0$
+\\$\implies m=-3$ or $m=2$
+}
+\item{$y'''-3y''+2y'=0$
+\\Substituting $y=e^{mx}$ in the given equation,
+\\$m^3e^{mx}-3m^2e^{mx}+2me^{mx}=0$
+\\$m^3-3m^2+2m=0$
+\\$m(m-2)(m-1)=0$
+\\$\implies m=0$ or $m=2$ or $m=1$
+}
 
-You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
+\end{enumerate}
+}
 
-We hope you find Overleaf useful, and please let us know if you have any feedback using the help menu above --- or use the contact form at \url{https://www.overleaf.com/contact}!
+\item{$y=x^m$ for $x>0$ is a solution of}
+\begin{enumerate}
+\item{$x^2y''-4xy'+4y=0$
+\\Substituting $y=x^m$ in the given equation,
+\\$x^2m(m-1)x^{m-2}-4xmx^{m-1}+4x^m=0$
+\\Dividing by $x^m$,
+\\$m(m-1)-4m+4=0$
+\\$\implies m=4$ or $m=1$
+}
+\item{$x^2y'''-xy''+y'=0$
+\\Substituting $y=x^m$ in the given equation,
+\\$x^2m(m-1)(m-2)x^{m-3}-xm(m-1)x^{m-2}+mx^{m-1}=0$
+\\Dividing by $x^{m-1}$,
+\\$m(m-1)(m-2)-m(m-1)+m=0$
+\\$m(m^2-3m+2-m^2+m+m)=0$
+\\$m(2-m)=0$
+\\$\implies m=0$ or $m=2$
+}
+\end{enumerate}
+\end{enumerate}
+}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\item{For each of the following linear differential equations verify that the function given in brackets is a solution of the differential equation.
+\\ \textbf{Warning : Incomplete.}
+\begin{enumerate}
+\item{$y''+4y=5e^x+3\sin x \ (y=a\sin 2x+ b\cos 2x+e^x+\sin x)$
+\item{$y''-5y'+6y=0 \ (y_1=e^{3x}, y_2=e^{2x}, c_1y_1+c_2y_2)$}
+\item{$y'''+6y''+11y'+6y=e^{-2x} \ (y=ae^{-x}+be^{-2x}+ce^{-3x}-xe^{-2x})$}
+\item{$y''' +8y=9e^x=65\cos x \ (y=ae^{-2x}+e^x(b\cos \sqrt[]{3}x+c\sin \sqrt[]{3}x)+8\cos x-\sin x	+e^x)$}
 
-\bibliographystyle{alpha}
-\bibliography{sample}
 
+}
+
+
+\end{enumerate}
+
+\item{Let $\phi_i$ be a solution of $y' +ay=b_i(x)$ for $i$=1,2. Show that $\phi_1+\phi_2$ satisfies $y' +ay=b_1(x)+b_2(x)$. Use this result to find the solutions of $y'+y=\sin x+ 3\cos 2x$ passing through the origin.
+\\The proof follows immediately from the fact that the equation is linear and hence,
+\\$(\phi_1+\phi_2)'+a(\phi_1+\phi_2)=(\phi_1)'+(\phi_2)' + a\phi_1+a\phi_2$
+\\$=(\phi_1'+ a\phi_1) +(\phi_2' +a\phi_2)$
+\\$=b_1(x)+b_2(x)$
+\\Let $b_1=\sin x$ and $b_2=3\cos 2x$
+\\For $\phi_1$, we have,
+\\$\phi_1' + a\phi_1=\sin x$
+\\Multiplying both sides by $e^{ax}$,
+\\$e^{ax}\phi_1' + ae^{ax}\phi_1=e^{ax}\sin x$
+\\$(\phi_1e^{ax})'=e^{ax}\sin x$
+\\$\phi_1e^{ax}=\int e^{ax}\sin x \ dx=e^{ax}\frac{(a\sin x - \cos x)}{a^2+1} +c$
+\\$\phi_1=\frac{a\sin x - \cos x}{a^2+1} +c$
+\\Similarly,
+\\$\phi_2=\frac{3(a\cos 2x+2\sin 2x)}{a^2+4}$
+\\The required solutions are $\phi_1+\phi_2$
+}
+}
+\item{Obtain the solution of the following differential equations:
+\begin{enumerate}
+\item{$(x^2+1)dy+(y^2+4)dx=0$; $y(1)=0$
+\\$\frac{dy}{y^2+4}=-\frac{dx}{x^2+1}$
+\\$\int\frac{dy}{y^2+4}=-\int\frac{dx}{x^2+1}$
+\\$\frac{1}{2}\tan^{-1}{\frac{y}{2}}=-\tan^{-1}{x}+c$
+\\$\frac{1}{2}\tan^{-1}{\frac{y}{2}}+\tan^{-1}{x}=c$
+\\Putting $x=1$, $y=0$,
+\\$c=\frac{\pi}{4}$ is the constant for the particular solution.
+}
+\item{$y'=y\cot x$; $y(\frac{\pi}{2})=1$
+\\$\frac{dy}{dx}=\frac{y}{\tan x}$
+\\$\frac{dy}{y}=\frac{\cos x}{\sin x}dx$
+\\$\int\frac{dy}{y}=\int\frac{\cos x}{\sin x}dx$
+\\$\ln{y}=\ln{\sin x} +c$
+\\$y=c\sin x$
+\\Putting $x=\frac{\pi}{2}$, $y=1$,
+\\$c=1$ is the constant for the particular solution.
+}
+\item{$y'=y(y^2-1)$, with $y(0)=2$ or $y(0)=1$ or $y(0)=0$
+\\$\frac{dy}{dx}=y(y^2-1)$
+\\$\int\frac{dy}{y(y-1)(y+1)}=\int dx$
+\\Using partial fractions,
+\\$\int(\frac{A}{y}+\frac{B}{y-1}+\frac{C}{y+1})dy=\int dx$
+\\$A=-1, B=C=\frac{1}{2}$
+\\$\implies -\ln{y} + \frac{1}{2}\ln{|y-1|} + \frac{1}{2}\ln{|y+1|}=x+c$
+\\On putting values for $(x, y)$ as $(0, 2), (0, 1)$ and $(0, 0)$, we get the respective particular solutions.
+}
+\item{$(x+2)y'-xy=0$; $y(0)=1$
+\\$(x+2)\frac{dy}{dx}=xy$
+\\$\frac{dy}{y}=\frac{x}{x+2}dx$
+\\$\int\frac{dy}{y}=\int(\frac{x}{x+2})dx$
+\\$\int\frac{dy}{y}=\int(1 - \frac{2}{x+2})dx$
+\\$\ln y = x - 2\ln|x+2| + c$
+\\Putting $x=0$, $y=1$,
+\\$0=-2\ln 2 +c$
+\\$c=\ln 4$ is the constant for the particular solution.
+}
+\item{$y'+\frac{y-x}{y+x}=0$; $y(1)=1$
+\\Substituting $y=vx$, $y'=v'x + v$,
+\\$v'x+v+\frac{vx-x}{vx+x}=0$
+\\$v'x+v+\frac{v-1}{v+1}=0$
+\\$\frac{dv}{dx}x =\frac{1-v}{1+v}-v$
+\\$\frac{dv}{dx}x =\frac{1-2v-v^2}{1+v}$
+\\$\frac{1+v}{1-2v-v^2}dv=\frac{1}{x}dx$
+\\$\int\frac{1+v}{1-2v-v^2}dv=\int\frac{1}{x}dx$
+\\$-\frac{1}{2}\ln|1-2v-v^2|=\ln x +c$
+\\$\frac{1}{\sqrt[]{|1-2v-v^2|}}=cx$
+\\$\frac{x}{\sqrt[]{|x^2-2xy-y^2|}}=cx$
+\\$\frac{}{\sqrt[]{|x^2-2xy-y^2|}}=c$
+\\Putting $x=1$, $y=1$,
+\\$c=\frac{1}{\sqrt[]{2}}$ is the constant for the particular solution.
+}
+\item{$y'=(y-x)^2$; $y(0)=2$
+\\Substituting $v=y-x$, $v'=y'-1$,
+\\$v'+1=v^2$
+\\$\int \frac{dv}{v^2-1}=\int dx$
+\\$\frac{1}{2}\ln(\frac{v-1}{v+1})=x+c$
+\\$\ln(c_1\frac{v-1}{v+1})=2x$
+\\$\frac{v-1}{v+1}=c_2e^{2x}$
+\\$\frac{y-x-1}{y-x+1}=c_2e^{2x}$
+\\Putting $x=0$, $y=2$,
+\\$\frac{1}{3}=c_2$ is the constant for the particular solution.
+}
+\item{$2(y\sin 2x+\cos 2x)dx=\cos 2x \ dy$; $y(\pi)=0$
+\\Substituting $v=y\cos 2x$, $dv=dy\cos 2x - 2y\sin 2x \ dx$,
+\\$2(y\sin 2x+\cos 2x)dx=dv+2y\sin 2x \ dx$
+\\$\int 2\cos 2x \ dx=\int dv$
+\\$\sin 2x = v+c$
+\\$\sin 2x = y\cos 2x + c$
+\\Putting $x=\pi$, $y=0$,
+\\$c=0$ is the constant for the particular solution.
+}
+\item{$y'=\frac{1}{(x+1)(x^2+1)}$
+\\$\frac{dy}{dx}=\frac{1}{(x+1)(x^2+1)}$
+\\$\int dy=\int\frac{dx}{(x+1)(x^2+1)}$
+\\Putting $x=\tan \theta$,
+\\$y=\int \frac{\sec ^2 \theta}{(\tan \theta +1)(\tan ^2 \theta +1)} d\theta$
+\\$y=\int \frac{\cos \theta}{\sin \theta + \cos \theta} d\theta$
+\\$y=\int \frac{1}{2} (\frac{\cos \theta + \sin \theta}{\cos \theta + \sin \theta} + \frac{\cos \theta - \sin \theta}{\cos \theta + \sin \theta})d\theta$
+\\$y=\int \frac{1}{2} (1 + \frac{\cos \theta - \sin \theta}{\cos \theta + \sin \theta})d\theta$
+\\$y=\frac{1}{2}(\theta + \ln|\cos \theta + \sin \theta|) +c$
+\\$y=\frac{1}{2}(\tan^{-1}x + \ln|\frac{1+x}{\sqrt[]{1+x^2}}|)+c$
+\\This is the general solution for the differential equation.
+}
+\end{enumerate}
+
+}
+
+\item{For each of the following differential equations, find the general solution (by substituting $y = vx$)
+\begin{enumerate}
+\item{$y'=\frac{y^2-xy}{x^2+xy}$
+\\Substituting $y=vx$, $y'=v'x+v$,
+\\$v'x+v=v\frac{v-1}{v+1}$
+\\$x\frac{dv}{dx}=v(\frac{v-1}{v+1}-1)$
+\\$x\frac{dv}{dx}=-\frac{2}{v+1}$
+\\$\int (v+1) dv=\int \frac{-2}{x}dx$
+\\$\frac{v^2}{2}+v=-2\ln |x| +c$
+\\$\frac{v^2}{2}+v=\ln c_1x^{-2}$
+\\$\frac{1}{2}(\frac{y}{x})^2+\frac{y}{x}=\ln c_1x^{-2}$ is the general solution for the given differential equation.
+}
+\item{$x^2y'=y^2+xy+x^2$
+\\Substituting $y=vx$, $y'=v'x+v$,
+\\$x^2(v'x+v)=v^2x^2+vx^2+x^2$
+\\$v'x+v=v^2+v+1$
+\\$v'x=v^2+1$
+\\$\frac{dv}{v^2+1}=dx$
+\\$\int \frac{dv}{v^2+1}=\int dx$
+\\$\tan^{-1}v=x+c$
+\\$\tan^{-1}\frac{y}{x}=x+c$ is the general solution for the given differential equation.
+}
+\item{$xy'=y+x\cos^2(\frac{y}{x})$
+\\Substituting $y=vx$, $y'=v'x+v$,
+\\$x(v'x+v)=vx+x\cos^2v$
+\\$v'x=\cos^2v$
+\\$\int \frac{dv}{\cos^2v}=\int\frac{dx}{x}$
+\\$\tan v=\ln |x|+c$ 
+\\$e^{\tan \frac{y}{x}} = c_1|x|$ is the general solution for the given differential equation.
+}
+\item{$xy'=y(\ln y-\ln x)$
+\\Substituting $y=vx$, $y'=v'x+v$,
+\\$x(v'x+v)=vx\ln v$
+\\$v'x=v(\ln v -1)$
+\\$\int \frac{dv}{v(\ln v -1)}=\int\frac{dx}{x}$
+\\$\ln|\ln v - 1| = \ln |x| + c$
+\\$\ln v - 1 = c_1x$ is the general solution for the given differential equation.
+}
+
+\end{enumerate}
+}
+
+\item{Show that the differential equation $\frac{dy}{dx}=\frac{ax+by+m}{cx+dy+n}$ where $a, b, c, d, m$ and $n$ are constants can be reduced to $\frac{dy}{dt}=\frac{ax+by}{cx+dy}$ if $ad-bc\neq 0$. Then find the general solution of the given equations.
+\\ \textbf{Warning : Incomplete.}
+\begin{enumerate}
+\item{$(1+x-2y)+y'(4x-3y-6)=0$}
+\item{$y'=\frac{y-x+1}{y-x+5}$}
+\item{$(x+2y+3)+(2x+4y-1)y'=0$}
+\end{enumerate}
+}
+
+\item{Solve the differential equation $\sqrt[]{1-y^2} \ dx + \sqrt{1-x^2} \ dy=0$ with the conditions $y(0)=\frac{\pm1}{2}\sqrt[]{3}$. Sketch the graphs of the solutions and show that they are each arcs of the same ellipse. Also show that after these arcs are removed, the remaining part of the ellipse does not satisfy the differential equation.
+\\$\sqrt[]{1-y^2} \ dx + \sqrt{1-x^2} \ dy=0$
+\\Dividing by $\sqrt[]{1-y^2}\sqrt{1-x^2}$
+\\$\frac{dx}{\sqrt[]{1-x^2}}+\frac{dy}{\sqrt[]{q-y^2}}=0$
+\\$\int\frac{dx}{\sqrt[]{1-x^2}}+\int\frac{dy}{\sqrt[]{1-y^2}}=0$
+\\$\sin^{-1}x+\sin^{-1}y=c$
+\\Putting $x=0$ and $y=\frac{\sqrt[]{3}}{2}$,
+\\$c_1=\frac{\pi}{3}$
+\\Putting $x=0$ and $y=-\frac{\sqrt[]{3}}{2}$,
+\\$c_2=-\frac{\pi}{3}$
+\\(Where $c_1$ and $c_2$ are the constants for the two particular solutions)
+\\Since $\frac{dy}{dx}<0$, we need to exclude the regions of the solution where $\frac{dy}{dx}>0$
+\\
+\begin{tikzpicture}
+\begin{axis}[
+    trig format plots=rad,
+    samples=300,
+    axis lines=middle, enlargelimits=true
+]
+\addplot [no markers,blue,thick,domain=-1/2:1
+] {sin((pi/3)-asin(x))};
+
+\addplot [no markers,green,thick,domain=-1:-1/2
+] {sin((pi/3)-asin(x))};
+
+\addplot [no markers,red,thick,domain=-1:1/2
+] {sin((-pi/3)-asin(x))};
+
+\addplot [no markers,green,thick,domain=1/2:1
+] {sin((-pi/3)-asin(x))};
+
+\end{axis}
+\end{tikzpicture}
+\\
+\\The blue part of the graph corresponds to $c=\frac{\pi}{3}$ and the red part corresponds to $c=-\frac{\pi}{3}$. The green part of the ellipse is not a solution to the differential equation.
+}
+
+\item{The differential equation $y=xy'+f(y')$ is called a Clairaut equation (or Clairaut's equation). Show that the general solution of this equation is the family of straight lines $y=cx + f(c)$. In addition to these, show that it has a special solution given by $f'(p)=-x$ where $p=y'$. This special solution which does not (in general) represent one of the straight lines $y=cx+f(c)$, is called a singular solution. Hint: Differentiate the differential equation.
+\\$y=xy'+f(y')$
+\\Differentiation both sides wrt $x$,
+\\$y'=y'+xy''+f(y')y''$
+\\$y''(x+f(y'))=0$
+\\$\implies y''=0$ or $x+f(y')=0$
+\\$\implies y'=c$ or $f'(p)=-x$, where $p=y'$
+\\Substituting $y'=c$ in Clairaut's equation,
+\\$y=cx+f(c)$ is the general solution
+\\$f'(p)=-x$, where $p=y'$ is the singular solution
+}
+
+\item{Determine the general solutions as well as the singular solutions of the following Clairaut equations.\textit{ In each of the two examples, sketch the graphs of these solutions.}
+\\ \textbf{Warning : Incomplete.}
+\begin{enumerate}
+\item{$y=xy'+\frac{1}{y'}$
+\\Since the equation is in the form of a Clairaut equation with $f(x)=\frac{1}{x}$, we can substitute $y'=c$ to get the general solution.
+\\$y=cx+\frac{1}{c}$ is the general solution of the differential equation.
+\\Let $p=y'$ and $f'(p)=-x$,
+\\$-\frac{1}{p^2}=-x$
+\\$p=\frac{1}{\sqrt[]{x}}$
+\\Substitute $y'=p=\frac{1}{\sqrt[]{x}}$ in the equation,
+\\$y=\frac{x}{\sqrt[]{x}}+\sqrt[]{x}$
+\\$\implies y=2 \ \sqrt[]{x}$ is the singular solution of the equation.
+}
+\item{$y=xy'-\frac{y'}{\sqrt[]{1+y'^2}}$
+\\Since the equation is in the form of a Clairaut equation with $f(x)=-\frac{x}{\sqrt[]{1+x^2}}$, we can substitute $y'=c$ to get the general solution.
+\\$y=cx-\frac{c}{\sqrt[]{1+c^2}}$ is the general solution of the differential equation.
+\\Let $p=y'$ and $f'(p)=-x$,
+\\$\frac{d}{dp}(\frac{p}{\sqrt[]{1+p^2}})=-x$
+\\$\frac{1}{(1+p^2)^{3/2}}=-x$
+\\$p=\sqrt[]{\frac{1}{x^{2/3}}-1}$
+\\Substitute $y'=p=\sqrt[]{\frac{1}{x^{2/3}}-1}$ in the equation,
+\\$y=x\sqrt[]{\frac{1}{x^{2/3}}-1}-\sqrt[]{1-x^{2/3}}$
+\\$y=-(1-x^{2/3})^{3/2}$ is the singular solution of the equation.
+}
+\end{enumerate}
+}
+\item{For the parabola $y=x^2$ find the equation of its tangent at $(c, c^2)$ and find the ordinary differential equation for this one parameter family of tangents. Identify this as a Clairaut equation. More generally, take your favorite curve and determine the ODE for the one parameter family of its tangents and verify that it is a Clairaut's equation. N.B: Exercise 13 shows that the converse is true.
+\\$\frac{dy}{dx}=2x$
+\\Equation of tangent at $(c, c^2)$ is,
+\\$\frac{y-c^2}{x-c}=2c$
+\\$y=2cx-c^2$
+\\Put $c_1=2c$
+\\$y=c_1x-(\frac{c_1}{2})^2$
+\\This is a solution for the Clairaut equation:
+\\$y=xy'-(\frac{y'}{2})^2$
+\\Similarly for other curves, the one parameter family of tangents forms a Clairaut equation.
+}
+
+\item{In the preceding exercises, show that in each case, the envelope of the family of straight lines is also a solution of the Clairaut equation.
+\\For the envelope of the family of lines, we have,
+\\$F(x,y,c)=y-2cx+c^2=0$
+\\$\frac{\partial F(x,y,c)}{\partial c}=-2x+2c=0$
+\\$\implies x=c, y=c^2 \implies y=x^2$, i.e. the equation of the parabola itself.
+\\Substituting $y=x^2$ in the equation
+\\$y=xy'-(\frac{y'}{2})^2$
+\\$x^2=2x^2-(\frac{2x}{2})^2 \implies 1=1$ 
+\\Thus, the envelope of the family of lines satisfies the Clairaut equation.
+\\Similar for other curves.
+}
+
+\item{Show that the differential equation $y'-y^3=2x^{-3/2}$ has three distinct solutions of the form $\frac{A}{\sqrt[]{x}}$ but that only one of these is real valued.
+\\Putting $y=\frac{A}{\sqrt[]{x}}$ in the given equation,
+\\$-\frac{1}{2}\frac{A}{x^{3/2}}-\frac{A^3}{x^{3/2}}=\frac{2}{x^{3/2}}$
+\\$\frac{2}{x^{3/2}}+\frac{1}{2}\frac{A}{x^{3/2}}+\frac{A^3}{x^{3/2}}=0$
+\\$\implies Q=2A^3+A+4=0$
+\\$\implies A$ can have only one real value, since $Q \rightarrow \infty$ as $A \rightarrow \infty$; $Q \rightarrow -\infty$ as $A \rightarrow -\infty$ and $\frac{dQ}{dA}>0$, i.e. Q is always increasing.
+}
+\end{enumerate}
+
+\section{Tutorial Sheet 2}
+\begin{enumerate}
+\item{State the conditions under which the following equations are exact.
+\textbf{\\Warning: This solution is suspicious!}
+\begin{enumerate}
+\item{$[f(x)+g(y)]dx+[h(x)+k(y)]dy=0$
+\\For the equation to be exact on ${\rm I\!R^2}$, it must be closed,
+\\$\implies \frac{\partial f(x)+g(y)}{\partial y} = \frac{\partial h(x)+k(y)}{\partial x}$
+\\$\implies g'(y)=h'(x)$
+\\For this to be true always, both must be equal to zero.
+\\$\implies g'(y)=h'(x)=c$
+\\$\implies g(y)=cy, h(x)=cx$
+}
+
+\item{$(x^3+xy^2)dx+(ax^2y+bxy^2)dy=0$
+\\For the equation to be exact on ${\rm I\!R^2}$, it must be closed,
+\\$\implies \frac{\partial (x^3+xy^2)}{\partial y}=\frac{\partial (ax^2y+bxy^2)}{\partial x}$
+\\$\implies 2xy=2axy+by^2$
+\\$\implies 2x=2ax+by$
+\\$\implies a=1, b=0$
+}
+
+\item{$(ax^2+2bxy+cy^2)dx + (bx^2+2cxy+gy^2)dy=0$
+\\For the equation to be exact on ${\rm I\!R^2}$, it must be closed,
+\\$\implies \frac{\partial (ax^2+2bxy+cy^2)}{\partial y}=\frac{\partial (bx^2+2cxy+gy^2)}{\partial x}$
+\\$\implies 2bx+2cy=2cy+2bx$
+\\$\implies$ The equation is always exact.
+}
+
+\end{enumerate}
+}
+
+\item{Solve the following exact equations
+\begin{enumerate}
+\item{$3x(xy-2)+(x^3+2y)dy=0$
+\\Let $M(x,y)=3x(xy-2)$ and $N(x,y)=(x^3+2y)$
+\\Let $u(x,y)$ be a function such that $\frac{\partial u(x,y)}{\partial x}=M(x,y)$ and $\frac{\partial u(x,y)}{\partial y}=N(x,y)$
+\\$\implies u=\int 3x(xy-2) \ dx +c(y)$
+\\$\implies u=\int 3x^2y - 6x \ dx +c(y)$
+\\$\implies u=x^3y - 3x^2 +c(y)$
+\\Partially differentiating $u(x,y)$ wrt $y$,
+\\$\frac{\partial u(x,y)}{\partial y}=N(x,y)$
+\\$\implies \frac{\partial (x^3y - 3x^2 +c(y))}{\partial y}=x^3+2y$
+\\$\implies x^3+c'(y)=x^3+2y$
+\\$\implies c'(y)=2y$
+\\$\implies c(y)=y^2+c_1$
+\\$\implies$ The solution to the differential equation is $x^3y - 3x^2 +y^2=c_2$
+}
+
+\item{$(\cos x \cos y - \cot x) dx - \sin x \sin y \ dy =0$
+\\Let $M(x,y)=\cos x \cos y - \cot x$ and $N(x,y)=\sin x \sin y$
+\\Let $u(x,y)$ be a function such that $\frac{\partial u(x,y)}{\partial x}=M(x,y)$ and $\frac{\partial u(x,y)}{\partial y}=N(x,y)$
+\\$\implies u=\int \cos x \cos y - \cot x \ dx + c(y)$
+\\$\implies u=\sin x \cos y - \ln\sin x + c(y)$
+\\Partially differentiating $u(x,y)$ wrt $y$,
+\\$\frac{\partial u(x,y)}{\partial y}=N(x,y)$
+\\$\implies\frac{\partial (\sin x \cos y - \ln\sin x + c(y))}{\partial y}=\sin x \sin y$
+\\$\implies -\sin x \sin y+c'(y)=\sin x \sin y$
+\\$\implies c'(y)=2\sin x \sin y$
+\\$\implies c(y)=-2\sin x \cos y+c_1$
+\\$\implies$ The solution to the differential equation is $\sin x \cos y - \ln\sin x -2\sin x \cos y=c_2$
+}
+
+\item{$e^xy(x+y)dx+e^x(x+2y-1)dy=0$
+\\Let $M(x,y)=e^xy(x+y) - \cot x$ and $N(x,y)=e^x(x+2y-1)$
+\\Let $u(x,y)$ be a function such that $\frac{\partial u(x,y)}{\partial x}=M(x,y)$ and $\frac{\partial u(x,y)}{\partial y}=N(x,y)$
+\\$\implies u=\int e^x y(x+y) \ dx +c(y)$
+\\$\implies u=\int e^x xy + e^x y^2 \ dx +c(y)$
+\\$\implies u=y\int xe^x \ dx + e^x y^2 +c(y)$
+\\$\implies u=e^x y(x-1) + e^x y^2 +c(y)$
+\\$\implies u=ye^x (x+y-1) +c(y)$
+\\Partially differentiating $u(x,y)$ wrt $y$,
+\\$\frac{\partial u(x,y)}{\partial y}=N(x,y)$
+\\$\implies \frac{\partial (ye^x (x+y-1) +c(y))}{\partial y}=e^x(x+2y-1)$
+\\$\implies \frac{\partial (ye^x (x-1) +y^2e^x +c(y))}{\partial y}=e^x(x+2y-1)$
+\\$\implies e^x(x-1)+2ye^x +c'(y)= e^x(x+2y-1)$
+\\$\implies c'(y)=0$
+\\$\implies c(y)=c_1$
+\\$\implies$ The solution to the differential equation is $ye^x (x+y-1)=c_2$
+}
+\end{enumerate}
+}
+\item{Determine (by inspection suitable) Integrating Factors (IF's) so that the following equations are exact. \\ \textbf{Warning : Incomplete.}
+\begin{enumerate}
+\item{$ydx+xdy=0$
+\\The equation is exact, since $M_y=N_x$, hence an integrating factor is $1$.
+}
+\item{$d(e^x\sin y)=0$
+\\The equation is exact, with solution $e^x\sin y=c$
+}
+\item{$dx+(\frac{y}{x})^2dy=0$
+\\By inspection, multiplying both sides by the integrating factor $x^2$,
+\\$x^2dx+y^2dy=0$
+\\The equation is exact, since $M_y=N_x$
+}
+\item{$ye^{x/y}dx+(y-xe^{x/y}dy=0$
+\\ \textbf{Warning : Incomplete.}
+}
+\item{$(2x+e^y)dx+xe^ydy=0$
+\\The equation is exact, since $M_y=N_x$, hence an integrating factor is $1$.
+}
+\item{$(x^2+y^2)dx+xydy=0$
+\\Trying the integrating factor $\frac{1}{x(x^2+2y^2)}$,
+\\$(\frac{x^2+y^2}{x(x^2+2y^2)})dx+\frac{xy}{x(x^2+2y^2)}dy=0$
+\\$(\frac{x^2+2y^2}{x(x^2+2y^2)}-\frac{y^2}{x(x^2+2y^2)})dx+\frac{y}{x^2+2y^2}dy=0$
+\\$(\frac{1}{x}-\frac{y^2}{x(x^2+2y^2)})dx+\frac{y}{x^2+2y^2}dy=0$
+\\$M_y=0-\frac{1}{x}\frac{2y(x^2+2y^2)-y^2(4y)}{(x^2+2y^2)^2}$
+\\$M_y=-\frac{2xy}{(x^2+2y^2)^2}$
+\\$N_x=-\frac{2xy}{(x^2+2y^2)^2}$
+\\$\implies M_y=N_x$
+\\Hence, $\frac{1}{x(x^2+2y^2)}$ is an integrating factor for the equation.
+}
+\end{enumerate}
+}
+\item{Verify that the equation $Mdx+Ndy=0$ ... (1) can be expressed in the form \[\frac{1}{2}(Mx+Ny)d(\ln xy) + \frac{1}{2}(Mx-Ny)d\ln(\frac{x}{y})=0\]
+\\Expanding the differentials in the second equation,
+\\$\frac{1}{2}(Mx+Ny)d(\ln xy) + \frac{1}{2}(Mx-Ny)d\ln(\frac{x}{y})=0$
+\\$\frac{1}{2}(Mx+Ny)d(\ln x+ \ln y) + \frac{1}{2}(Mx-Ny)d(\ln x -\ln y)=0$
+\\$\frac{1}{2}(Mx+Ny)(\frac{dx}{x}+ \frac{dy}{y}) + \frac{1}{2}(Mx-Ny)(\frac{dx}{x}- \frac{dy}{y})=0$
+\\$Mdx+Ndy=0$
+\\Hence, the equation can be expressed in the given form.
+\\Hence, show that,
+\begin{enumerate}
+\item{if $Mx+Ny=0$, then $\frac{1}{Mx-Ny}$ is an IF of (1)
+\\Multiplying the second equation by $\frac{1}{Mx-Ny}$, putting $Mx+Ny=0$,
+\\$\frac{1}{2}(\frac{dx}{x} - \frac{dy}{y})=0$
+\\This equation is exact, since $M_y=N_x$, hence $\frac{1}{Mx-Ny}$ is an integrating factor.
+}
+
+\item{if $Mx-Ny=0$, then $\frac{1}{Mx+Ny}$ is an IF of (1)
+\\Multiplying the second equation by $\frac{1}{Mx+Ny}$, putting $Mx-Ny=0$,
+\\$\frac{1}{2}(\frac{dx}{x} + \frac{dy}{y})=0$
+\\This equation is exact, since $M_y=N_x$, hence $\frac{1}{Mx+Ny}$ is an integrating factor.
+}
+
+\item{if $M$ and $N$ are homogeneous of the same degree then $\frac{1}{Mx+Ny}$ is an IF of (1).
+\\Multiplying the second equation by $\frac{1}{Mx+Ny}$,
+\\$d(\ln xy) + \frac{(Mx-Ny)}{(Mx+Ny)}d\ln(\frac{x}{y})=0$
+\\$d(\ln xy) + \frac{(1-\frac{Ny}{Mx})}{(1+\frac{Ny}{Mx})}d\ln(\frac{x}{y})=0$
+\\Since $Ny$ and $Mx$ are homogeneous of the same degree, we can express $\frac{Ny}{Mx}$ purely as a function of $v$, where $v=\frac{y}{x}$
+\\$d(\ln xy) + f(v)d\ln(\frac{x}{y})=0$
+\\$d(\ln xy) + f(v)d\ln(\frac{1}{v})=0$
+\\$d(\ln vx^2) - \frac{f(v)}{v}dv=0$
+\\$d(\ln v + 2\ln x) - \frac{f(v)}{v}dv=0$
+\\$\frac{1}{v}dv + \frac{2}{x}dx - \frac{f(v)}{v}dv=0$
+\\$\frac{2}{x}dx + g(v)dv=0$, where $g(v)$ is another function of v.
+\\This equation is exact, since $M_v=N_x$, hence $\frac{1}{Mx+Ny}$ is an integrating factor.
+}
+\end{enumerate}
+
+}
+\end{enumerate}
+\begin{center}
+Please send all queries, suggestions and corrections to varunpatil@iitb.ac.in
+\\Created using \LaTeX \ with Overleaf
+\end{center}
 \end{document}
