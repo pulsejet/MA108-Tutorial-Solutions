@@ -628,7 +628,150 @@
 \\This equation is exact, since $M_v=N_x$, hence $\frac{1}{Mx+Ny}$ is an integrating factor.
 }
 \end{enumerate}
+\item{If $\mu(x,y)$ is an IF of $Mdx+Ndy=0$ then prove that
+\[ M_y-N_x=N\frac{\partial}{\partial x}ln|\mu|-M\frac{\partial}{\partial y}ln|\mu|\]
+$M_y-N_x=N\frac{\partial}{\partial x}ln|\mu|-M\frac{\partial}{\partial y}ln|\mu|$
+\\$\iff M_y-N_x=\frac{N}{\mu}\frac{\partial\mu}{\partial x}-\frac{M}{\mu}\frac{\partial\mu}{\partial y}$ \hfill ... (assume $\mu\neq 0$)
+\\$\iff M_y\mu+M\frac{\partial\mu}{\partial y}\mu=N_x\mu+N\frac{\partial\mu}{\partial x}$
+\\$\iff (M\mu)_y=(N\mu)_x$
+\\Which is true, since the equation $\mu M dx+\mu Ndy=0$ is exact since $\mu$ is an IF.
+\\
+\\Use the relation to prove that if $\frac{1}{N}(M_y-N_x)=f(x)$ then there exists an IF $\mu(x)$ given by exp$(\int_a ^x f(t) dt)$ and if $\frac{1}{M}(M_y-N_x)=g(y)$, then there exists an IF $\mu(y)$ given by exp$(-\int_a ^y g(t) dt)$. Further if $M_y-N_x=f(x)N-g(y)M$ then $\mu(x,y) =$exp$(\int_a^xf(x')dx'+\int_a^yg(y')dy')$ is an IF, where a is any constant.
+\\Can be proved trivially by substituting $\mu$ as appropriate and showing L.H.S. = R.H.S.
+\\
+\\Determine an IF for the following differential equations:
+\begin{enumerate}
+\item{$y(8x-9y)dx+2x(x-3y)dy=0$
+\\$\frac{1}{N}(M_y-N_x)=\frac{1}{2x(x-3y)} 8x-18y-(4x-6y)$
+\\$\frac{1}{N}(M_y-N_x)=\frac{1}{2x(x-3y)} 4(x-3y)$
+\\$\frac{1}{N}(M_y-N_x)=\frac{2}{x}=f(x)$
+\\$\implies \mu=$exp$(\int_a ^x f(t) dt)$ is an IF for the equation.
+\\$\mu=$exp$(\int_a ^x \frac{2}{t}dt)$
+\\$\mu=$exp$(2\ln(\frac{x}{a}))$
+\\$\mu=\frac{x^2}{a^2}$
+}
+\item{$3(x^2+y^2)dx+(x^3+3xy^2+6xy)dy=0$
+\\$\frac{1}{N}(M_y-N_x)=\frac{1}{3(x^2+y^2)} (6y-(3x^2+3y^2+6y))$
+\\$\frac{1}{N}(M_y-N_x)=-1=f(x)$
+\\$\implies \mu=$exp$(\int_a ^x f(t) dt)$ is an IF for the equation.
+\\$\mu=$exp$(\int_a ^x -1 dt)$
+\\$\mu=$exp$(a-x)$
+}
+\item{$(4xy+3y^2-x)dx+x(x+2y)dy=0$
+\\$\frac{1}{N}(M_y-N_x)=\frac{1}{x(x+2y)} (4x+6y-(2x+2y))$
+\\$\frac{1}{N}(M_y-N_x)=\frac{1}{x(x+2y)} 2(x+2y)$
+\\$\frac{1}{N}(M_y-N_x)=\frac{2}{x}=f(x)$
+\\$\implies \mu=$exp$(\int_a ^x f(t) dt)$ is an IF for the equation.
+\\$\mu=$exp$(\int_a ^x \frac{2}{t} dt)$
+\\$\mu=$exp$(2\ln(\frac{x}{a}))$
+\\$\mu=\frac{x^2}{a^2}$
+}
+\end{enumerate}
+}
+}
+\item{Find the general solution of the following differential equations.
+\\\textbf{Incomplete, only hints given}
+\begin{enumerate}
+\item{$(y-xy')+a(y^2+y')=0$
+\\Separable, use partial fractions.
+}
+\item{$[y+xf(x^2+y^2)]dx+[yf(x^2+y^2)-x]dy=0$
+\\\textbf{Incomplete}
+}
+\item{$(x^3+y^2\sqrt[]{x^2+y^2})dx-xy\sqrt[]{x^2+y^2}dy=0$
+\\$\frac{1}{N}(M_y-N_x)=f(x)$, hence $\mu=$exp$(\int_a ^x f(t) dt)$ is an IF.
+}
+\item{$(x+y)^2y'=1$
+\\Substitute $v=(x+y)$
+}
+\item{$y'-x^{-1}y=x^{-1}y^2$
+\\Homogenous, substitute $y=vx$.
+}
+\item{$x^2y'+2xy=\sinh 3x$
+\\Express both sides as derivatives of functions
+}
+\item{$y'+y\tan x=\cos^2x$
+\\Use IF $\sec x$
+}
+\item{$(3y-7x+7)dx+(7y-3x+3)dy=0$
+\\Shift origin to intersection of the lines and solve as homogeneous.
+}
+\end{enumerate}
+}
+\item{Solve the following homogeneous equations
+\\\textbf{Substitute $y=vx$ in all}
+\begin{enumerate}
+\item{$(x^3+y^3)dx-3x^2dy=0$}
+\item{$(x^2+6y^2)dx+4xydy=0$}
+\item{$xy'=y(\ln y-\ln x)$}
+\item{$xy'=y+x\cos^2 \frac{y}{x}$}
+\end{enumerate}
+}
+\item{Solve the following first order linear equations.
+\\\textbf{Incomplete, only hints given}
+\begin{enumerate} 
+\item{$xy'-2y=x^4$
+\\Use IF $\frac{1}{x^3}$
+}
+\item{$y'+2y=e^{-2x}$
+\\Use IF $e^{2x}$
+}
+\item{$y'=1+3y\tan x$
+\\Use IF $\cos^3 x$
+}
+\item{$y' = \mathrm{cosec} x+y\cot x$
+\\Use IF $\mathrm{cosec} x$
+}
+\item{$y'=\mathrm{cosec} x-y\cot x$
+\\Use IF $\sin x$
+}
+\item{$y'-my=c_1e^{mx}$
+\\Use IF $e^{-mx}$
+}
+\end{enumerate}
+}
+\item{A differential equation of the form $y' + f(x)y = g(x)y^\alpha$ is called a Bernoulli equation. Note that if $\alpha = 0$ or $1$ it is linear and for other values it is nonlinear. Show that the transformation $y^{1-\alpha} = u$ converts it into a linear equation. Use this to solve the following equations.
+\\Divinding the equation by $y$,
+$\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
+\\Substituting $y^{1-\alpha} = u$ and $y'=\frac{y^\alpha}{1-\alpha}u'$ in the equation,
+\\$\frac{y^\alpha}{y(1-\alpha)}u'+f(x)=g(x)u^{-1}$
+\\Multiplying by $u$,
+\\$\frac{u'}{1-\alpha} + f(x)u=g(x)$
+\\This equation is linear, hence shown.
+\\\textbf{Incomplete: Equations left out}
+}
+\\\line(1,0){250}
+\\\textbf{IMPORTANT} : The solutions till this point were for the older tutorial sheets, the ones that follow are for the newer ones
+\item{This is blank because it doesn't exist in the newer tutorial sheet}
+\\\line(1,0){250}
 
+\item{A differential equation of the form $y'=P(x)+Q(x)y+R(x)y^2$ is called Ricatti's equation. In general, the equation cannot be solved by elementary methods. But if a particular solution $y=y_1$ is known, then the general solution is given by $y(x)=y_1(x)+u(x)$ where $u$ satisfies the Bernoulli equation
+\[\frac{du}{dx}-(Q+2Ry_1)u=Ru^2\]
+\begin{enumerate}
+\item{Use the method to solve $y'+x^3y-x^2y^2=1$, given $y_1=x$
+\\$P(x)=1; Q(x)=-x^3; R(X)=x^2$
+\\Thus, the Bernoulli equation we need to solve is
+\\$\frac{du}{dx}-(-x^3+2x^2\times x)u=x^2u^2$
+\\$\frac{du}{dx}-ux^3=x^2u^2$
+\\Substituting $v=\frac{1}{u}$,
+\\$-\frac{1}{v^2}\frac{dv}{dx}-\frac{x^3}{v}=\frac{x^2}{v^2}$
+\\$\frac{dv}{dx}+vx^3=-x^2$
+\\Using IF $e^{x^4/4}$
+\\$ve^{x^4/4}=-\int x^2e^{x^4/4} dx$
+\\Thus, the solution to the equation $y'+x^3y-x^2y^2=1$ is
+\\$y(x)=x-\frac{e^{x^4/4}}{\int x^2e^{x^4/4} dx}$
+}
+\item{Use the method to solve $y'=x^3(y-x)^2+x^{-1}y$
+\\Solve similarly as above
+}
+\end{enumerate}
+}
+\item{Determine by Picard's method, successive approximations to the solutions of the following initial value problems. Compare your results with the exact solutions.
+\begin{enumerate}
+\item{$y'=2\sqrt[]{y}; y(1)=0$}
+\item{$y'-xy=1; y(0)=1$}
+\item{$y'=x-y^2; y(0)=1$}
+\end{enumerate}
 }
 \end{enumerate}
 \begin{center}
