@@ -799,6 +799,33 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	\\$\implies c=1$
 	\\i.e. $y=e^x-1$
 	
+	\item Find the general solutions of the following differential equations.
+	\begin{enumerate}
+		\item $y''-y'-2y=0$
+			\\Try $y=e^{mx}$
+			\\$e^{mx}(m^2-m-2)=0$
+			\\$\implies m=2$ or $m=-1$
+			\\i.e. $y=e^{2x}$ and $y=e^{-x}$ are two solutions. Since these are linearly independent, they form the basis of the solution space of the equation. Thus, the general solution is,
+			$y=ae^{2x}+be^{-x}$
+		
+		\item $y''-2y'+5y=0$
+			\\Try $y=e^{mx}$
+			\\$e^{mx}(m^2-2m+5)=0$
+			\\$m=\frac{2\pm\sqrt{4-20}}{2}=\frac{2\pm 4i}{2}$
+			\\$m=1\pm 2i$
+			\\$\implies y=e^xe^{2xi}$ or $y=e^xe^{-2xi}$
+			\\$\implies y=e^x(\cos 2x + i\sin 2x)$ or $y=e^x(\cos 2x - i\sin 2x)$
+			\\$\implies y=e^x\cos 2x$ and $y=e^x\sin 2x$ are also solutions to the equation (linear combinations).
+			\\Since these are linearly independent, they form the basis of the solution space of the equation. Thus, the general solution is,
+			\\$y=e^x(a\sin 2x + b\cos 2x)$
+	\end{enumerate}
+		
+	\item Find the differential equation of the form $y''+ay'+by=0$ where $a$ and $b$ are constants for which the following functions are solutions:
+	\begin{enumerate}
+		\item $e^{-2x}, 1$
+						
+	\end{enumerate}
+	
 \end{enumerate}
 
 \begin{center}
