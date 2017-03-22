@@ -823,13 +823,20 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	\item Find the differential equation of the form $y''+ay'+by=0$ where $a$ and $b$ are constants for which the following functions are solutions:
 	\begin{enumerate}
 		\item $e^{-2x}, 1$
-						
+			\\Plugging $y=1$ in the equation, we get $b=0$
+			\\Plugging $y=e^{-2x}$,
+			\\$4e^{-2x}-2ae^{-2x}=0$
+			\\$\implies a=2$
+		\item $e^{-(\alpha+i\beta)x}, e^{-(\alpha-i\beta)x}$
+			\\Since the ODE is homogeneous, the linear combinations are also solutions
+			\\$\implies y=e^{-\alpha x}\cos{\beta x}$ and $y=e^{-\alpha x}\sin{\beta x}$ are solutions.
+			\\\textbf{Incomplete : Do the math that follows}
 	\end{enumerate}
 	
 \end{enumerate}
 
 \begin{center}
-Please send all queries, suggestions and corrections to varunpatil@iitb.ac.in
+Please send all queries, suggestions and corrections to varunpatil [at] iitb.ac.in
 \\Created using \LaTeX \ with Overleaf and TexStudio
 \end{center}
 \end{document}
