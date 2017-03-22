@@ -774,8 +774,35 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 \end{enumerate}
 }
 \end{enumerate}
+\section{Tutorial Sheet 3}
+
+\begin{enumerate}
+	\item Find the values of m for which
+	\begin{enumerate}
+		\item $y=e^{mx}$ is a solution of $y''+y'-6y=0$
+			\\Plugging in $y=e^{mx}$ in the equation,
+			\\$e^{mx}(m^2+m-6)=0$
+			\\$\implies m=-3$ or $m=2$ \hfill ... since $e^{mx}>0$
+		\item $y=x^m$ for $x>0$ is a solution of $x^2y''-4xy'+4y=0$
+			\\Plugging in $y=x^m$ in the equation,
+			\\$m(m-1)x^m-4mx^m+4x^m=0$
+			\\$m^2-m-4m+4=0$ \hfill ... since $x>0$
+			\\$\implies m=4$ or $m=1$
+	\end{enumerate}
+	
+	\item Find the curve $y(x)$ through the origin for which $y''=y'$ and the tangent at the origin is $y=x$.
+	\\Consider $u=y'$, we have $u'=u \implies \frac{du}{dx}=u \implies u=ce^x$
+	\\$\implies \frac{dy}{dx}=u=ce^x \implies y=ce^x + d$
+	\\As the curve has a tangent at origin, it satisfies $(0,0)$
+	\\$\implies d=-1$
+	\\Also, we have $\frac{dy}{dx}=1$ at $(0,0)$
+	\\$\implies c=1$
+	\\i.e. $y=e^x-1$
+	
+\end{enumerate}
+
 \begin{center}
 Please send all queries, suggestions and corrections to varunpatil@iitb.ac.in
-\\Created using \LaTeX \ with Overleaf
+\\Created using \LaTeX \ with Overleaf and TexStudio
 \end{center}
 \end{document}
