@@ -12,6 +12,7 @@
 \usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 %% Useful packages
+\usepackage{dsfont}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -852,26 +853,120 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	
 	\item Are the following pairs of functions linearly independent on the given interval?
 	\begin{enumerate}
-		\item $\sin 2x, \cos(2x+\frac{\pi}{2})$
-		\\\textbf{(ii) and (v) are dependent, others are independent.}
-		
+		\item $\sin 2x, \cos(2x+\frac{\pi}{2}); x>0$
+		\item $x^3, x^2|x|; -1<x<1$
+		\item $x|x|,x^2;0\leq x \leq 1$
+		\item $\log x, \log x^2; x>0$
+		\item $x,x^2,\sin x; x\in \mathds{R}$
 	\end{enumerate}
+	\textbf{(ii) and (v) are linearly independent, others dependent.}
 	
 	\item Solve the following:
-	\\$y''-4y'+3y=0, y(0)=1, y'(0)=-5$
-	
+	\\$y''-4y'+3y=0, y(0)=1, y'(0)=-5$\\
+	Putting $y=e^{mx}$,\\
+	$m^2-4m+3=0$\\
+	$\implies m=1$ or $m=3$\\
+	Since the equation is homogeneous,\\
+	$y=c_1e^x+c_2e^{3x}$\\
+	$y(0)=1 \implies c_1+c_2=1$\\
+	$y'(0)=-5 \implies c_1 + 3c_2 =-5$\\
+	$\implies c_2=-3$ and $c_1=4$\\
+	$\implies y=4e^x-3e^{3x}$
 	
 	\item Solve the Cauchy-Euler equations:
 	\begin{enumerate}
-		\item $x^2y''-2y=0$
-		\item $x^2y''+2xy'-6y=0$
+		\item $x^2y''-2y=0$\\
+		Putting $y=x^m$,\\
+		$m(m-1)-2=0$\\
+		$\implies m^2-m-2=0$\\
+		$\implies m=-1$ or $m=2$\\
+		Since the equation is homogeneous,\\
+		$y=c_1x^2+c_2 \frac{1}{x}$
+		
+		\item $x^2y''+2xy'-6y=0$\\
+		Putting $y=x^m$,\\
+		$m(m-1)+2m-6=0$\\
+		$m^2+m-6=(m-2)(m+3)=0$\\
+		$\implies m=-3$ or $m=2$\\
+		Since the equation is homogeneous,\\
+		$y=c_1x^2+c_2\frac{1}{x^3}$
+		
 	\end{enumerate}
 	
-	\item Find the solution of $x^2y''-xy'-3y=0$ satisfying $y(1)=1$ and $y(x)\to 0$ as $x\to\infty$
+	\item Find the solution of $x^2y''-xy'-3y=0$ satisfying $y(1)=1$ and $y(x)\to 0$ as $x\to\infty$\\
+	Putting $y=x^m$,\\
+	$m(m-1)-m-3=0$\\
+	$m^2-2m-3=0$\\
+	$\implies m=3$ or $m=-1$\\
+	Since the equation is homogeneous,\\
+	$y=c_1x^3+c_2\frac{1}{x}$\\
+	$y(1)=1 \implies c_1+c_2=1$\\
+	$\displaystyle{\lim_{x\to\infty}} y(x)=0 \implies c_1=0$\\
+	$\implies c_2=1$\\
+	$\implies y=\frac{1}{x}$
 	
-	\item Show that every solution of the constant coefficient equation $y''+\alpha y+\beta y=0$ tends to zero as $x\to \infty$ if and only if the real parts of the roots of the characteristic polynomial are negative.
+	\item Show that every solution of the constant coefficient equation $y''+\alpha y+\beta y=0$ tends to zero as $x\to \infty$ if and only if the real parts of the roots of the characteristic polynomial are negative.\\
+	Let $m_1$ and $m_2$ be the solutions of the characteristic polynomial\\
+	$\implies y=c_1e^{m_1x}+c_2e^{m_2x}$\\
+	If any of $m_1$ or $m_2$ are positive, then that term would go to infinity as $x\to\infty$. Also, if $m_1$ and $m_2$ are negative, then the limit is zero.
 	
-	\item Let $y_1(x)$ and $y_2(x)$ be two solutions of the homogeneous equation $y''+p(x)y'+q(x)y=0$, $a<x<b$, and let $W(x)$ be the Wronskian of these two solutions. Prove that $W'(x)=-p(x)W(x)$. If $W(x_0)=0$ for some $x_0$ with $a<x_0<b$, the prove that $W(x)=0$ for each x with $a<x<b$.
+	\item Let $y_1(x)$ and $y_2(x)$ be two solutions of the homogeneous equation $y''+p(x)y'+q(x)y=0$, $a<x<b$, and let $W(x)$ be the Wronskian of these two solutions. Prove that $W'(x)=-p(x)W(x)$. If $W(x_0)=0$ for some $x_0$ with $a<x_0<b$, the prove that $W(x)=0$ for each x with $a<x<b$.\\
+	$W'(x)=-p(x)W(x)$\\
+	$\iff W'(x)+p(x)W(x)=0$\\
+	
+	$\iff \begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1'(x) & y_2'(x)
+	\end{vmatrix}' + p(x)
+	\begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1'(x) & y_2'(x)
+	\end{vmatrix}
+	=0$\\
+	
+	$\iff \begin{vmatrix}
+	y_1'(x) & y_2'(x)\\
+	y_1'(x) & y_2'(x)
+	\end{vmatrix} + \begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1''(x) & y_2''(x)
+	\end{vmatrix} + p(x)
+	\begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1'(x) & y_2'(x)
+	\end{vmatrix}
+	=0$
+	
+	$\iff \begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1''(x) & y_2''(x)
+	\end{vmatrix} +
+	\begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	p(x)y_1'(x) & p(x)y_2'(x)
+	\end{vmatrix}
+	=0$
+	
+	$\iff 
+	\begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1''+ p(x)y_1'(x) & y_2''+p(x)y_2'(x)
+	\end{vmatrix}
+	=0$
+	
+	$\iff 
+	\begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	-q(x)y_1(x) & -q(x)y_2(x)
+	\end{vmatrix}=-q(x)
+	\begin{vmatrix}
+	y_1(x) & y_2(x)\\
+	y_1(x) & y_2(x)
+	\end{vmatrix}
+	=0$\\ \linebreak
+	Which is true!
+	
+	\item Let $y=y_1(x)$ be a solution of $y''+p(x)y'+q(x)y=0$. Let $I$ be an interval where $y_1(x)$ does not vanish, and $a\in I$ be any element. Prove that the general solution is given by \[y=y_1(x)[c_2+c_1\psi(x)] \text{ where } \psi(x)=\int_a^x\frac{\exp(-\int_a^tp(u)du)}{y_1^2(t)}dt \]
 	
 \end{enumerate}
 
