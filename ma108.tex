@@ -964,7 +964,15 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	y_1(x) & y_2(x)
 	\end{vmatrix}
 	=0$\\ \linebreak
-	Which is true!
+	Which is true!\\
+	We have $W'(x)=\frac{dW(x)}{dx}=-p(x)W(x)$\\
+	$\implies \frac{dW(x)}{W(x)}=-p(x)dx$\\
+	$\implies \int\frac{dW(x)}{W(x)}=\int -p(x)dx$\\
+	$\implies \ln|CW(x)|=\int -p(x)dx$\\
+	$\implies W(x)=Ce^{\int -p(x)dx}$\\
+	$\implies W(x)=Ce^{P(x)}$\\
+	If $W(x_0)=0$, then we have $C=0$, since $e^{P(x)}>0$\\
+	Thus, we have $W(x_0)=0 \implies W(x)=0$ for $a<x<b$
 	
 	\item Let $y=y_1(x)$ be a solution of $y''+p(x)y'+q(x)y=0$. Let $I$ be an interval where $y_1(x)$ does not vanish, and $a\in I$ be any element. Prove that the general solution is given by \[y=y_1(x)[c_2+c_1\psi(x)] \text{ where } \psi(x)=\int_a^x\frac{\exp(-\int_a^tp(u)du)}{y_1^2(t)}dt \]
 	
