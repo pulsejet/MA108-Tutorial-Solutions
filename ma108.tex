@@ -975,7 +975,76 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	Thus, we have $W(x_0)=0 \implies W(x)=0$ for $a<x<b$
 	
 	\item Let $y=y_1(x)$ be a solution of $y''+p(x)y'+q(x)y=0$. Let $I$ be an interval where $y_1(x)$ does not vanish, and $a\in I$ be any element. Prove that the general solution is given by \[y=y_1(x)[c_2+c_1\psi(x)] \text{ where } \psi(x)=\int_a^x\frac{\exp(-\int_a^tp(u)du)}{y_1^2(t)}dt \]
+
+	\item For each of the following ODEs, you are given one solution. Find the second solution.
 	
+\end{enumerate}
+
+\section{Tutorial Sheet 4}
+
+\begin{enumerate}
+	\item Solve the following initial value problems.
+	\begin{enumerate}
+		\item $(D^2+5D+6)y=0, y(0)=2, y'(0)=-3$\\
+			The characteristic polynomial for the constant coefficient ODE is\\
+			$m^2+5m+6=0$\\
+			$\implies m=-2$ or $m=-3$\\
+			$\implies y=c_1e^{-2x}+c_2e^{-3x}$\\
+			$y(0)=2 \implies c_1+c_2=2$\\
+			$y'(0)=-3 \implies -2c_1-3c_2=-3 \implies 2c_1+3c_2=3$\\
+			$\implies c_1=3, c_2=-1$\\
+			$\implies y=3e^{-2x}-e^{-3x}$
+			
+		\item $(D+1)^2y=0, y(0)=1, y'(0)=2$\\
+			The characteristic polynomial for the constant coefficient ODE is\\
+			$(m+1)^2=0$\\
+			$\implies m=-1$\\
+			$\implies y=ce^{-x}$\\
+			$y(0)=1 \implies c=1$\\
+			But then $y'(0)\neq 2$\\
+			$\implies$ no solution exists.
+			
+		\item $(D^2+2D+2)y=0, y(0)=1, y'(0)=-1$\\
+			The characteristic polynomial for the constant coefficient ODE is\\
+			$m^2+2m+2=0$\\
+			$\implies m=\frac{-2\pm\sqrt{4-8}}{2}$\\
+			$\implies m=-1\pm i$\\
+			$\implies y=c_1e^{-x}e^{ix} + c_2e^{-x}e^{-ix}$\\
+			$\implies y=e^{-x}(c_1e^{ix} + c_2e^{-ix})$\\
+			Taking appropriate linear combination,\\
+			$y=e^{-x}(c_1\sin x + c_2\cos x)$\\
+			$y(0)=1 \implies c_2=1$\\
+			$y'(0)=-1 \implies c_1-c_2=-1$\\
+			$\implies c_1=0$\\
+			$\implies e^{-x}\cos x$
+			
+	\end{enumerate}
+
+	\item Solve the following initial value problems
+	\begin{enumerate}
+		\item $(x^2D^2-4xD+4)y=0, y(1)=4, y'(1)=1$
+		\item $(4x^2D^2+4xD-1)y=0, y(4)=2, y'(4)=-1/4$
+		\item $(x^2D^2-5xD+8)y=0,y(1)=5,y'(1)=18$
+	\end{enumerate}
+	\textbf{Easy}, solve as earlier.
+	
+	\item Using the Method of Undetermined Coefficients, determine a particular solution of the following equations. Also find the general solutions of these equations.
+	\begin{enumerate}
+		\item $y''+2y'+3y=27x$\\
+		Try $y=c_1x+c_0$\\
+		$2c_1+3(c_1x+c_0)=27x$\\
+		$2c_1+3c_0+3c_1x=27x$\\
+		$\implies c_1=9$ and $18+3c_0=0 \implies c_0=-6$\\
+		$\implies y=9x-6$ is a particular solution.
+				
+		\item $y''+y'-2y=3e^x$
+		\item $y''+4y'+4y=18\cos x$
+		\item $y''+4y'+3y=\sin x + 2\cos x$
+		\item $y''-2y'+2y=2e^x\cos x$
+		\item $y''+y=x\cos x + \sin x$
+	\end{enumerate}
+	
+
 \end{enumerate}
 
 \begin{center}
