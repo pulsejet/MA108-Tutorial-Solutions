@@ -985,7 +985,7 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	\item Solve the following initial value problems.
 	\begin{enumerate}
 		\item $(D^2+5D+6)y=0, y(0)=2, y'(0)=-3$\\
-			The characteristic polynomial for the constant coefficient ODE is\\
+			The characteristic equation for the constant coefficient ODE is\\
 			$m^2+5m+6=0$\\
 			$\implies m=-2$ or $m=-3$\\
 			$\implies y=c_1e^{-2x}+c_2e^{-3x}$\\
@@ -995,7 +995,7 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 			$\implies y=3e^{-2x}-e^{-3x}$
 			
 		\item $(D+1)^2y=0, y(0)=1, y'(0)=2$\\
-			The characteristic polynomial for the constant coefficient ODE is\\
+			The characteristic equation for the constant coefficient ODE is\\
 			$(m+1)^2=0$\\
 			$\implies m=-1$\\
 			$\implies y=c_1e^{-x}+c_2xe^{-x}$ \hfill... since $m_1=m_2$ \\
@@ -1004,7 +1004,7 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 			$\implies y=e^{-x}+xe^{-x}$
 			
 		\item $(D^2+2D+2)y=0, y(0)=1, y'(0)=-1$\\
-			The characteristic polynomial for the constant coefficient ODE is\\
+			The characteristic equation for the constant coefficient ODE is\\
 			$m^2+2m+2=0$\\
 			$\implies m=\frac{-2\pm\sqrt{4-8}}{2}$\\
 			$\implies m=-1\pm i$\\
@@ -1092,10 +1092,28 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 		Using $b=0, a=\frac{-1}{4},$\\$ y=y_1+y_2=\frac{1}{4}(x^2\sin x-x\cos x) $ is a particular solution of the ODE\\
 		$\implies$ the general solution of the non-homogeneous ODE is \\
 		$y=a\cos x +b\sin x + \frac{1}{4}x^2\sin x-\frac{1}{4}x\cos x$
-		
-		
 	\end{enumerate}
 	
+	\item Solve the following initial value problems.
+	\begin{enumerate}
+		\item $y''+y'-2y=14+2x-2x^2, y(0),y'(0)=0$\\
+		Try $y=ax^ + bx +c$\\
+		$\implies 2a + 2ax+b-2ax^2-2bx-2c=14+2x-2x^2 \implies a=1$\\
+		$\implies 2 + 2x+b-2bx-2c=14+2x \implies b=0$\\		
+		$\implies 2 -2c=14 \implies c=-6$\\
+		Try $y=x^2 -6$ is a particular solution of the ODE\\
+		The general solution of the corresponding homogeneous ODE is $y=ae^x+be^{-2x}$\\
+		$\implies$ the general solution of the non-homogeneous ODE is \\
+		$y=x^2 -6+ae^x+be^{-2x}$\\
+		$y(0)=0 \implies -6+a+b=0$\\
+		$y'(0)=0 \implies a-2b=0$\\
+		$\implies b=2$ and $a=4$\\
+		$\implies$ the particular solution of the IVP is \\
+		$y=x^2 -6+4e^x+2e^{-2x}$
+		
+		\item $y''+y'-2y=-6\sin 2x -18\cos 2x; y(0)=y'(0)=2$
+		
+	\end{enumerate}
 
 \end{enumerate}
 
