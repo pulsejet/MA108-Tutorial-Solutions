@@ -998,10 +998,10 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 			The characteristic polynomial for the constant coefficient ODE is\\
 			$(m+1)^2=0$\\
 			$\implies m=-1$\\
-			$\implies y=ce^{-x}$\\
-			$y(0)=1 \implies c=1$\\
-			But then $y'(0)\neq 2$\\
-			$\implies$ no solution exists.
+			$\implies y=c_1e^{-x}+c_2xe^{-x}$ \hfill... since $m_1=m_2$ \\
+			$y(0)=1 \implies c_1=1$\\
+			$\implies y'(0)=1+c_2(0+1)=2 \implies c_2=1$\\
+			$\implies y=e^{-x}+xe^{-x}$
 			
 		\item $(D^2+2D+2)y=0, y(0)=1, y'(0)=-1$\\
 			The characteristic polynomial for the constant coefficient ODE is\\
@@ -1041,6 +1041,7 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 		$y=9x-6 + e^{-x}(a\cos\sqrt{2}x + b\sin\sqrt{2}x)$
 				
 		\item $y''+y'-2y=3e^x$\\
+		Try $y=ce^x\implies 0=3e^x$\\
         Try $y=cxe^{x}$\\
         $c(x+2)e^x+c(x+1)e^x-2cxe^x=3e^x$\\
         $\implies c=1$\\
@@ -1048,10 +1049,51 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
         The general solution of the corresponding homogeneous ODE is $y=ae^x+be^{-2x}$\\
         $\implies$ the general solution of the non-homogeneous ODE is $y=ae^x+be^{-2x} +xe^x$
         
-		\item $y''+4y'+4y=18\cos x$
-		\item $y''+4y'+3y=\sin x + 2\cos x$
-		\item $y''-2y'+2y=2e^x\cos x$
-		\item $y''+y=x\cos x + \sin x$
+		\item $y''+4y'+4y=18\cos x$\\
+		Try $y=a\cos x +b\sin x$\\
+		$\implies -a+4b+4a=18$ and $-b-4a+4b=0$\\
+		$\implies 4b+3a=18$ and $3b-4a=0$\\
+		$\implies 16b+12a=72$ and $9b-12a=0$\\
+		$\implies 25b=72 \implies b=\frac{72}{25}$\\
+		$\implies a=\frac{9\times 72}{12}$\\
+		$\implies a=54$\\
+		\textbf{P(this is wrong) $\approx$ 1}
+
+		\item $y''+4y'+3y=\sin x + 2\cos x$\\
+		Try $y=a\cos x +b\sin x$\\
+		$-a+4b+3a=2$ and $-b-4a+3b=1$\\
+		$\implies a+2b=1$ and $-4a+2b=1$\\
+		$\implies a=0$ and $b=1/2$\\
+		$\implies y=\frac{1}{2}\sin x$ is a particular solution.\\
+		The general solution of the corresponding homogeneous ODE is $y=ae^{-x}+be^{-3x}$\\
+		$\implies$ the general solution of the non-homogeneous ODE is $y=\frac{1}{2}\sin x + ae^{-x}+be^{-3x}$
+		
+		\item $y''-2y'+2y=2e^x\cos x$\\
+		Try $y=(a\cos x +b\sin x)e^x$\\
+		$(((a+b)\cos x +(b-a)\sin x)e^x)'  -2(((a+b)\cos x +(b-a)\sin x)e^x) + 2(a\cos x +b\sin x)e^x =2e^x\cos x$\\
+		$((2b\cos x - 2a\sin x)e^x)  -2(((a+b)\cos x +(b-a)\sin x)e^x) + 2(a\cos x +b\sin x)e^x =2e^x\cos x$\\
+		$(b\cos x - a\sin x)  -((a+b)\cos x +(b-a)\sin x) + (a\cos x +b\sin x) =\cos x$\\
+		$(b\cos x - a\sin x)  - ((a+b)\cos x +(b-a)\sin x) + (a\cos x +b\sin x) =\cos x$\\
+		$0=\cos x$, i.e. the guess did not work \\Also, the solution to the homogeneous ODE is $y=(a\cos x +b\sin x)e^x$\\
+		Try $y=x(a\cos x +b\sin x)e^x + x^2(c\cos x +d\sin x)e^x$\\
+		\textbf{Incomplete: Do this dirty calculation}\\
+		Get $a=d=-\frac{1}{2}$ and $b=c=0$\\
+		$\implies$ the general solution of the non-homogeneous ODE is \\$y=(\frac{1}{2}x^2\sin x + \frac{1}{2}x\cos x + a\cos x +b\sin x)e^x$
+		
+		\item $y''+y=x\cos x + \sin x$\\
+		Try $y_1=(xa\cos x +xb\sin x)$\\
+		$2(b\cos x- a \sin x) - y_1 +y_1=x\cos x + \sin x$\\
+		$2(b\cos x- a \sin x) =x\cos x + \sin x$\\
+		Try $y_2=(x^2c\cos x +x^2d\sin x)$\\
+		$4x(d\cos x- c \sin x) + 2(c\cos x+ d \sin x) - y_2 +y_2=x\cos x + \sin x$\\
+		$4x(d\cos x- c \sin x) + 2(c\cos x+ d \sin x)=x\cos x + \sin x$\\
+		Put $c=0, d=\frac{1}{4}$\\
+		LHS $= \frac{1}{2} \sin x$ and RHS$ = \sin x$\\
+		Using $b=0, a=\frac{-1}{4},$\\$ y=y_1+y_2=\frac{1}{4}(x^2\sin x-x\cos x) $ is a particular solution of the ODE\\
+		$\implies$ the general solution of the non-homogeneous ODE is \\
+		$y=a\cos x +b\sin x + \frac{1}{4}x^2\sin x-\frac{1}{4}x\cos x$
+		
+		
 	\end{enumerate}
 	
 
