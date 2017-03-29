@@ -1207,9 +1207,33 @@ $\phi_n$ follows this pattern.\\
 	\item $xy''-y'=(3+x)x^3e^x$ \\ \textbf{Incomplete}
 \end{enumerate}
 
-\item Prove that the functions $e^{r_1x},e^{r_2x},...,e^{r_nx}$, where $r_1, r_2,...,r_n$ are distinct real numbers, are linearly independent.
-\\ \textbf{Incomplete}
+\item Prove that the functions $e^{r_1x},e^{r_2x},...,e^{r_nx}$, where $r_1, r_2,...,r_n$ are distinct real numbers, are linearly independent.\\
+Writing the Wronskian for any two functions,\\
+$W=\begin{vmatrix}
+e^{r_px} & e^{r_qx}\\
+r_pe^{r_px} & r_qe^{r_qx}
+\end{vmatrix} \neq 0 $, so we have all linearly independent.
 
+\item For the following non-homogeneous equations, a solution $y_1$ of the corresponding homogeneous equation is given. Find a second solution $y_2$ of the corresponding homogeneous equation and the general solution of the non-homogeneous equation using the Method of Variation of Parameters.\\
+Any constant coefficient ODE of degree $n$ has solution as $\sum_{i=1}^{n}b_ie^{a_ix}$ where $a_i$ are roots of the characteristic polynomial. If all roots are negative then $y\to 0$ as $x \to \infty$, since each term goes to zero as $x$ increases.
+
+\item In each case, find a linear differential equation with constant coefficients satisfied by all the given functions.
+\begin{enumerate}
+	\item $u_1(x)=e^x,u_2(x)=e^{-x},u_3(x)=e^{2x},u_4(x)=e^{-2x}$\\
+	From the characteristic polynomial, $(D-1)(D+1)(D-2)(D+2)y=0$\\
+	Or $(D^2-1)(D^2-2)y=0$\\
+	which is a linear ODE of degree 4 with constant coefficients.
+	
+	\item $u_1(x)=e^{-2x},u_2(x)=xe^{-2x},u_3(x)=x^2e^{-2x}$\\
+	From the characteristic polynomial, $(D+2)^3y=0$\\
+	which is a linear ODE of degree 3 with constant coefficients.
+	
+	\item $u_1(x)=1, u_2(x)=x,u_3(x)=e^x,u_4(x)=xe^x$\\
+	From the characteristic polynomial, $(D-1)^2y=0$ is satisfied by $u_3$ and $u_4$\\
+	For $u_1(x)=1$ and $u_2(x)=x$, $D^2y=0$ is the corresponding equation\\
+	$\implies$ the required linear ODE is $D^2(D-1)^2y=0$
+	
+\end{enumerate}
 \end{enumerate}
 
 \begin{center}
