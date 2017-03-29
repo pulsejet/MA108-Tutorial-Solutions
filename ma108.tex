@@ -30,6 +30,8 @@
 \begin{center}Disclaimer: This document was created Just for Fun!
 \\I am not responsible for inaccuracies, bad solutions, burnt answer sheets or any thermonuclear war that this could cause. If you point your finger at me, I will just laugh at you.\end{center}
 
+\textit{Note : The questions till Tutorial 2, Question 9 are from the old tutorial sheets, while the ones that follow are from the new ones.}
+
 \section{Tutorial Sheet 1}
 \renewcommand{\labelenumii}{(\roman{enumii})}
 
@@ -770,19 +772,22 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 \begin{enumerate}
 \item $y'=2\sqrt[]{y}; y(1)=0$\\
 $\phi_0=0$\\
-$y'=f(t,y)$\\
-$\phi_1(t)=\int f(s,\phi_0(s))$\\
-$\frac{\partial f}{\partial y}=\frac{1}{\sqrt{y}}$\\
-We get all $\phi(s)$ as $0$, which is the only solution we can find using Picard's method.
+$\phi_1(t)=\int f(s,\phi_0(s)) ds$\\
+We get all $\phi(s)$ as $0$, which is the only solution we can find using Picard's method (unless we guess $\phi_0(x)=x^2$).\\
+\textbf{Might be wrong}
 \item $y'-xy=1; y(0)=1$ \\
 $\phi_0=1$\\
 $\phi_1(x)=1+\int_0^x (1+s) ds=1+x+\frac{x^2}{2}$\\
 $\phi_2(x)=1+\int_0^x (1+s+s^2+\frac{s^3}{2}) ds=1+x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{8}$\\
-$\phi_3(x)=1+\int_0^x (1+s+s^2+\frac{s^3}{2} +\frac{s^4}{3}+\frac{s^5}{8}) ds=1+x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{8}+\frac{x^5}{15}+\frac{x^6}{40}$\\
-$\phi_n$ follows this pattern.\\
-\textbf{Arbit}
+$\phi_3(x)=1+\int_0^x (1+s+s^2+\frac{s^3}{2} +\frac{s^4}{3}+\frac{s^5}{8}) ds=1+x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{8}+\frac{x^5}{15}+\frac{x^6}{48	}$\\
+$\phi_n$ follows this pattern.
 
-\item $y'=x-y^2; y(0)=1$ 
+\item $y'=x-y^2; y(0)=1$ \\
+$\phi_0=1$\\
+$\phi_1=1+\int_0^x (s-1)ds = 1 - s + \frac{s^2}{2}$ \\
+$\phi_2=1+\int_0^x s - (1 - s + \frac{s^2}{2})^2$\\
+I'm too bored to continue ... this doesn't even seem right ...
+
 \end{enumerate}
 }
 \end{enumerate}
@@ -1215,6 +1220,9 @@ r_pe^{r_px} & r_qe^{r_qx}
 \end{vmatrix} \neq 0 $, so we have all linearly independent.
 
 \item For the following non-homogeneous equations, a solution $y_1$ of the corresponding homogeneous equation is given. Find a second solution $y_2$ of the corresponding homogeneous equation and the general solution of the non-homogeneous equation using the Method of Variation of Parameters.\\
+
+\item A linear DE with constant coefficients has characteristic polynomial $f(x) = 0$. If all the roots of $f(x)$ are negative, prove that every solution of the differential equation approaches 0 as $x \to +\infty$. What can you conclude about the behavior of all solutions in the interval $[0,+1)$, if all the roots of f(x) are non-positive?
+
 Any constant coefficient ODE of degree $n$ has solution as $\sum_{i=1}^{n}b_ie^{a_ix}$ where $a_i$ are roots of the characteristic polynomial. If all roots are negative then $y\to 0$ as $x \to \infty$, since each term goes to zero as $x$ increases.
 
 \item In each case, find a linear differential equation with constant coefficients satisfied by all the given functions.
@@ -1234,6 +1242,8 @@ Any constant coefficient ODE of degree $n$ has solution as $\sum_{i=1}^{n}b_ie^{
 	$\implies$ the required linear ODE is $D^2(D-1)^2y=0$
 	
 \end{enumerate}
+
+
 \end{enumerate}
 
 \begin{center}
