@@ -768,9 +768,21 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 }
 \item{Determine by Picard's method, successive approximations to the solutions of the following initial value problems. Compare your results with the exact solutions.
 \begin{enumerate}
-\item{$y'=2\sqrt[]{y}; y(1)=0$}
-\item{$y'-xy=1; y(0)=1$}
-\item{$y'=x-y^2; y(0)=1$}
+\item $y'=2\sqrt[]{y}; y(1)=0$\\
+$\phi_0=0$\\
+$y'=f(t,y)$\\
+$\phi_1(t)=\int f(s,\phi_0(s))$\\
+$\frac{\partial f}{\partial y}=\frac{1}{\sqrt{y}}$\\
+We get all $\phi(s)$ as $0$, which is the only solution we can find using Picard's method.
+\item $y'-xy=1; y(0)=1$ \\
+$\phi_0=1$\\
+$\phi_1(x)=1+\int_0^x (1+s) ds=1+x+\frac{x^2}{2}$\\
+$\phi_2(x)=1+\int_0^x (1+s+s^2+\frac{s^3}{2}) ds=1+x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{8}$\\
+$\phi_3(x)=1+\int_0^x (1+s+s^2+\frac{s^3}{2} +\frac{s^4}{3}+\frac{s^5}{8}) ds=1+x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{8}+\frac{x^5}{15}+\frac{x^6}{40}$\\
+$\phi_n$ follows this pattern.\\
+\textbf{Arbit}
+
+\item $y'=x-y^2; y(0)=1$ 
 \end{enumerate}
 }
 \end{enumerate}
@@ -1097,7 +1109,7 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	\item Solve the following initial value problems.
 	\begin{enumerate}
 		\item $y''+y'-2y=14+2x-2x^2, y(0),y'(0)=0$\\
-		Try $y=ax^ + bx +c$\\
+		Try $y=ax^2 + bx +c$\\
 		$\implies 2a + 2ax+b-2ax^2-2bx-2c=14+2x-2x^2 \implies a=1$\\
 		$\implies 2 + 2x+b-2bx-2c=14+2x \implies b=0$\\		
 		$\implies 2 -2c=14 \implies c=-6$\\
