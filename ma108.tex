@@ -1166,12 +1166,37 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 	$\implies y=2e^{2x} e^{-x} - e^{3x} e^{-2x} $\\
 	$\implies y=e^{x}$ is the required particular solution
 
-	\item $y''+y=\tan x, 0<x<\frac{\pi}{2}$
-	\item $y''+4y'+4y=x^{-2}e^{-2x}, x>0$
-	\item $y''+4y=3\text{ cosec }2x, 0<x<\frac{\pi}{2}$
-	\item $x^2y''-2xy'+2y=5x^3\cos x$
-	\item $xy''-y'=(3+x)x^3e^x$
+	\item $y''+y=\tan x, 0<x<\frac{\pi}{2}$\\
+	The general solution of the homogeneous ODE is $y=a\sin x+b\cos x$\\
+	$\implies y_1=\cos x, y_2=\sin x$\\
+	$r(x)=\tan x$ and $W(y_1,y_2)=\begin{vmatrix}
+	\cos x & \sin x\\
+	-\sin x & \cos x
+	\end{vmatrix} = 1$\\
+	By variation of parameters, $y=-y_1\int \frac{y_2 r(x)}{W(y_1,y_2)} dx + y_2\int \frac{y_1 r(x)}{W(y_1,y_2)}dx$\\
+	$\implies y=-\cos x\int \frac{\sin x \tan x}{1} dx + \sin x\int \frac{\cos x \tan x}{1}dx$\\
+	$\implies y=-\cos x\int \frac{\sin^2 x}{\cos x} dx - \sin x\cos x$ is the required particular solution (this integral can be solved further if necessary).
+	
+	\item $y''+4y'+4y=x^{-2}e^{-2x}, x>0$\\
+	The general solution of the homogeneous ODE is $y=ae^{-2x}+bxe^{-2x}$\\
+	$\implies y_1=e^{-2x}, y_2=xe^{-2x}$\\
+	$r(x)=x^{-2}e^{-2x}$ and $W(y_1,y_2)=\begin{vmatrix}
+	e^{-2x}  & xe^{-2x}\\
+	-2e^{-2x} & (-2x+1)e^{-2x}
+	\end{vmatrix} = e^{-4x}$\\
+	By variation of parameters, $y=-y_1\int \frac{y_2 r(x)}{W(y_1,y_2)} dx + y_2\int \frac{y_1 r(x)}{W(y_1,y_2)}dx$\\
+	$\implies y=-e^{-2x}\int \frac{xe^{-2x} x^{-2}e^{-2x}}{e^{-4x}} dx + xe^{-2x}\int \frac{e^{-2x} x^{-2}e^{-2x}}{e^{-4x}}dx$\\
+	$\implies y=-e^{-2x}\int x^{-1} dx + xe^{-2x}\int x^{-2}dx$\\
+	$\implies y=-e^{-2x}\ln |x| + xe^{-2x}(-\frac{1}{x})$\\
+	$\implies y=-e^{-2x}(\ln |x| + 1 )$ is the required particular solution.
+	
+	\item $y''+4y=3\text{ cosec }2x, 0<x<\frac{\pi}{2}$ \\ \textbf{Incomplete}
+	\item $x^2y''-2xy'+2y=5x^3\cos x$ \\ \textbf{Incomplete}
+	\item $xy''-y'=(3+x)x^3e^x$ \\ \textbf{Incomplete}
 \end{enumerate}
+
+\item Prove that the functions $e^{r_1x},e^{r_2x},...,e^{r_nx}$, where $r_1, r_2,...,r_n$ are distinct real numbers, are linearly independent.
+\\ \textbf{Incomplete}
 
 \end{enumerate}
 
