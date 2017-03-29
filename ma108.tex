@@ -1108,12 +1108,70 @@ $\frac{y'}{y} + f(x) = g(x)y^{\alpha-1}$
 		$y(0)=0 \implies -6+a+b=0$\\
 		$y'(0)=0 \implies a-2b=0$\\
 		$\implies b=2$ and $a=4$\\
-		$\implies$ the particular solution of the IVP is \\
+		$\implies$ the solution to the IVP is \\
 		$y=x^2 -6+4e^x+2e^{-2x}$
 		
-		\item $y''+y'-2y=-6\sin 2x -18\cos 2x; y(0)=y'(0)=2$
+		\item $y''+y'-2y=-6\sin 2x -18\cos 2x; y(0)=y'(0)=2$\\
+		Try $y=a\cos 2x + b\sin 2x$\\
+		$\implies -6(a\cos 2x + b\sin 2x) - 2a\sin 2x +2b\cos 2x--6\sin 2x -18\cos 2x$\\
+		$\implies (-6a+2b)\cos 2x + (-2a-6b) \sin 2x =-6\sin 2x -18\cos 2x$\\
+		$\implies -6a+2b=-18$ and $-2a-6b=-6$\\
+		$\implies a=3, b=0$\\
+		$\implies y=3\cos 2x$ is a particular solution of the ODE.\\
+		The general solution of the corresponding homogeneous ODE is $y=ae^x+be^{-2x}$\\		
+		$\implies$ the general solution of the non-homogeneous ODE is\\
+		$y=ae^x+be^{-2x}+3\cos 2x$\\
+		$y(0)=2 \implies a+b+3=2$\\
+		$y'(0)=2 \implies a -2b=2$\\
+		$\implies a=0, b=-1$\\
+		$\implies$ the solution to the IVP is\\
+		$y=3\cos 2x -e^{-2x}$
 		
+		\item $y''-4y'+3y=4e^{3x}, y(0)=-1,y'(0)=3$\\
+		Try $y=axe^{3x}$\\
+		$\implies a(3(3x+1)e^{3x} +3e^{3x}) -4a(3x+1)e^{3x} +3axe^{3x}=4e^{3x}$\\
+		$\implies a(9x +6) -4a(3x+1) +3ax=4$\\
+		$\implies 6a-4a=2a=4 \implies a=2$\\
+		$\implies y=2xe^{3x}$ is a particular solution of the ODE\\
+		The general solution of the corresponding homogeneous ODE is $y=ae^x+be^{3x}$\\
+		$\implies$ the general solution of the non-homogeneous ODE is\\
+		$y=ae^x+(b+2x)e^{3x}$\\
+		$y(0)=-1 \implies a+b=-1$\\
+		$y'(0)=3 \implies a +3b +2=3$\\
+		$\implies a=-2, b=1$\\
+		$\implies$ the solution to the IVP is\\
+		$y=-2e^x+(2x+1)e^{3x}$
 	\end{enumerate}
+
+\item For each of the following equations, write down the form of the particular solution. Do not go further and compute the Undetermined Coefficients.\\
+\textbf{Warning : Incomplete}
+\begin{enumerate}
+	\item $y''+y=x^3\sin x$
+	\item $y''+2y'+y=2x^2e^{-x}+x^3e^{2x}$
+	\item $y'+4y=x^3e^{-4x}$
+\end{enumerate}
+
+\item Using the Method of Variation of Parameters, determine a particular solution for each of the following.
+\begin{enumerate}
+	\item $y''-5y'+6y=2e^x$\\
+	The general solution of the homogeneous ODE is $y=ae^{2x}+be^{3x}$\\
+	$\implies y_1=e^{2x}, y_2=e^{3x}$\\
+	$r(x)=2e^x$ and $W(y_1,y_2)=\begin{vmatrix}
+	e^{2x} & e^{3x}\\
+	2e^{2x} & 3e^{3x}
+	\end{vmatrix} = e^{5x}$\\
+	By variation of parameters, $y=-y_1\int \frac{y_2 r(x)}{W(y_1,y_2)} dx + y_2\int \frac{y_1 r(x)}{W(y_1,y_2)}dx$\\
+	$\implies y=-e^{2x}\int \frac{2e^xe^{3x}}{e^{5x}} dx + e^{3x}\int \frac{2e^xe^{2x}}{e^{5x}}dx$\\
+	$\implies y=-2e^{2x}\int e^{-x} dx + 2e^{3x}\int e^{-2x} dx$\\
+	$\implies y=2e^{2x} e^{-x} - e^{3x} e^{-2x} $\\
+	$\implies y=e^{x}$ is the required particular solution
+
+	\item $y''+y=\tan x, 0<x<\frac{\pi}{2}$
+	\item $y''+4y'+4y=x^{-2}e^{-2x}, x>0$
+	\item $y''+4y=3\text{ cosec }2x, 0<x<\frac{\pi}{2}$
+	\item $x^2y''-2xy'+2y=5x^3\cos x$
+	\item $xy''-y'=(3+x)x^3e^x$
+\end{enumerate}
 
 \end{enumerate}
 
