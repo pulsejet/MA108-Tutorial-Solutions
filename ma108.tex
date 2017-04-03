@@ -1243,7 +1243,37 @@ Any constant coefficient ODE of degree $n$ has solution as $\sum_{i=1}^{n}b_ie^{
 	
 \end{enumerate}
 
+\end{enumerate}
 
+\section{Tutorial Sheet 5}
+
+\begin{enumerate}
+	
+	\item In each case, find a linear differential equation with constant coefficients satisfied by all the given functions.
+	\begin{enumerate}
+		\item $u_1(x) =x^2, u_2(x)=e^x, u_3(x)=xe^x$\\
+		For $u_1$, we need $D^3y=0$ and $(D-1)^2y=0$ for $u_2$ and $u_3$\\
+		$\implies D^3(D-1)^2y=0$ is satisfied by all $u$.
+		
+		\item $u_1(x)=e^{-2x}\cos 3x, u_2(x)=e^{-2x}\sin 3x, u_3(x)=e^{-2x}, u_4(x)=xe^{-2x}$\\
+		Taking linear combinations of $u_1$ and $u_2$, we get $u=e^{-(2\pm 3i)x}$ also satisfies the equation.\\
+		Forming the equation, for $u_1$ and $u_2$, we have $(D+2-3i)(D+2+3i)y=0$ and for $u_3$ and $u_4$, we have $(D+2)^2y=0$\\
+		$\implies y=(D+2)^2(D^2+4D+13)y=0$ is satisfied by all $u$.
+		
+	\end{enumerate}
+
+	\item Let $y_1(x),y_2(x),...,y_n(x)$ be $n$ linearly independent solutions of the $n$th order homogeneous linear differential equation $y^{(n)}+p_1y^{(n-1)}+...+p_{n-1}(x)y+p_n(x)y=0$. Prove that $y(x)=c_1(x)y_1(x)+c_2(x)y_2(x)+...+c_n(x)y_n(x)$ is a solution of the non-homogeneous equation \[ y^{(n)}+p_1y^{(n-1)}+...+p_{n-1}(x)y+p_n(x)y=r(x) \]
+	where $c_1(x),c_2(x),...,c_n(x)$ are given by $c_i(x)=\int \frac{D_i(x)}{\omega(x)}dx$ where $D_i(x)$ is the determinant of the matrix obtained from the matrix defining the Wronskian $\omega (x)$ by replacing its $i$th column by 
+	$[0 \ 0 \ 0 \ ... \ r(x)]^T$
+	
+	\textbf{Incomplete, proof given in lecture slides for Lecture 15}
+	
+	\item Three solutions of a certain second order non-homogeneous linear differential equation are
+	\[y_1(x)=1+e^{x^2} \ \ y_2	(x)=1+xe^{x^2} \ \ y_3(x)=(1+x)e^{x^2}-1\]
+	Find the general solution of the equation.\\
+	Let $u_1=y_3-y_2=e^{x^2}-2$ and $u_2=y_2-y_1=(x-1)e^{x^2}$, then $u_1$ and $u_2$ are solutions of the corresponding homogeneous differential equation.\\
+	Thus, the general solution of the non-homogeneous DE is $c_1u_1+c_2u_2+y_1(x)$.
+	
 \end{enumerate}
 
 \begin{center}
