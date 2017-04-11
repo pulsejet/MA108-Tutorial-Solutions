@@ -1272,7 +1272,91 @@ Any constant coefficient ODE of degree $n$ has solution as $\sum_{i=1}^{n}b_ie^{
 	\[y_1(x)=1+e^{x^2} \ \ y_2	(x)=1+xe^{x^2} \ \ y_3(x)=(1+x)e^{x^2}-1\]
 	Find the general solution of the equation.\\
 	Let $u_1=y_3-y_2=e^{x^2}-2$ and $u_2=y_2-y_1=(x-1)e^{x^2}$, then $u_1$ and $u_2$ are solutions of the corresponding homogeneous differential equation.\\
-	Thus, the general solution of the non-homogeneous DE is $c_1u_1+c_2u_2+y_1(x)$.
+	Thus, the general solution of the non-homogeneous DE is $c_1u_1+c_2u_2+y_1(x)$.\\
+	i.e. $y=a(e^{x^2}-2)+b(x-1)e^{x^2}+1+e^{x^2}$
+	
+	\onehalfspacing
+	\item Let $r_1,...,r_n$ be  distinct real numbers and $Q_1,...,Q_n$ be polynomials with real coefficients, none of which is the zero polynomial. Prove that the functions \[u_i(x) = Q_i(x)e^{r_ix}, : 1 \leq i \leq n\] are linearly independent.\\
+	\doublespacing
+	
+	\onehalfspacing
+	\item Let $m_1,...,m_k$ be positive integers and $r_1,...r_k$ be distinct real numbers. Set $n = m_1 + ... + m_k$. For each pair of integers satisfying: $1 \leq p \leq k, 1 \leq q \leq m_p$, let
+	\[u_{p,q}=x^{q-1}e^{r_px}\]. For instance, if $p=1$, then the functions are \[u_{1,1}(x)=e^{r_1x}, u_{2,1}(x)=xe^{r_1x},...,u_{m_1,1}(x)=x^{m_1-1}e^{r_1x}\]
+	Prove that the $n$ functions $u_p,q$ defined above are linearly independent. \\ Hint: Use the earlier exercise.\\ \doublespacing
+	For $p_1=p_2=k$, we have the functions linearly independent due to linear independence of $x^k$ (this can also be verified by taking the Wronkskian).\\
+	For $p_1\neq p_2$, the functions are linearly independent due to the result in Q.4\\
+	Hence all the functions are linearly independent.
+	
+	\item  Solve the following ODE’s, given that $y_1 = x$ is a solution. [Hint: Put $y = ux$ in the ODE. Then put $u' = v$ in the new equation, to get an equation of lower order to solve.]
+	\begin{enumerate}
+		\item \(x^3y''' − 3x^2y'' + (6 − x^2)xy' − (6 − x^2)y = 0\)\\
+		Putting $y=ux$,\\
+		$x^3 (u+xu')'' - 3x^2(u+xu')' + (6-x^2)x(u+xu') - (6-x^2)ux=0$\\
+		$x^3 (2u'+xu'')' - 3x^2(2u'+xu'') + (6-x^2)x^2u'=0$\\
+		$x^3 (3u''+xu''') - 3x^2(2u'+xu'') + (6-x^2)x^2u'=0$\\
+		$x^3 (xu''') -x^4u'=0$\\
+		$\implies x=0$ or $ u'''=u'$\\
+		Put $u'=v$ in $u'''=u'$,\\
+		$v''=v$, i.e. $m^2=1$ i.e. $v=ae^x + be^{-x}$\\
+		$u=\int v dx = \int ae^x +be^{-x} dx = c_1e^x+c_2e^{-x}$
+		
+		\item \(y''' + (x^2 + 1)y'' − 2x^2y' + 2xy = 0\)\\
+		Putting $y=ux$,\\
+		$(3u''+xu''') + (x^2 + 1)(2u'+xu'') − 2x^2(u+xu') + 2x(ux) = 0$
+		$(3u''+xu''') + 2x^2u'+x^3u'' + 2u'+xu'' − 2x^2(xu') = 0$\\
+		$xu''' + (x^3+x+3)u'' - 2(x^3 -x^2 -1)u'  = 0$\\
+		\textbf{Now what???}
+	\end{enumerate} 
+
+	\item Solve the following differential equations using the annihilator method.
+	\begin{enumerate}
+		\item $y^{(4)}+2y^{(2)}+y=\sin x$\\
+		%Note that $P_L(x)=x^4+2x^2+1=(x^2+1)^2$\\
+		%So a basis for Ker $L$ is \{$e^{ix},xe^{ix},e^{-ix},xe^{-ix} $\}\\
+		%or, \{$\cos x,x\cos x,\sin x,x\sin x $\}\\
+		$r(x)=\sin x$ is in the null space of the operator $A=D^2+1$\\
+		$\implies AL(y)=(D^2+1)(D^4+2D^2+1)=(D^2+1)^3$\\
+		Roots are $\pm i$\\
+		$\implies$ the general solution of $AL(y)=0$ is\\
+		$c_1e^{ix}+c_2e^{-ix}+c_3xe^{ix}+c_4xe^{-ix}+c_5x^2e^{ix}+c_6x^2e^{-ix}$\\
+		Since the first four terms are annihilated, we have a solution of the form $c_5x^2e^{ix}+c_6x^2e^{-ix}$ or $ax^2\sin x+bx^2\cos x$\\
+		Plugging this in the ODE, we can get the values of \(a\) and \(b\) by comparing coefficients on both sides (due to linear independence)\\
+		\textbf{Incomplete : Do this}\\
+		Answer is $a=-\frac{1}{8}, b=0$
+		
+		\item $y^{(4)}-y^{(3)}-3y^{(2)}+5y'-2y=xe^x +2e^{-2x}$\\
+		$r(x)=xe^x+e^{-2x}$ is in the null space of the operator $A=(D-1)^2(D+2)$\\
+		$\implies AL(y)=(D-1)^2(D+2)(D^4-D^3-3D^2+5D-2)=(D-1)^5(D+2)^2$\\
+		$\implies$ the general solution of $AL(y)=0$ is\\
+		$c_1e^x+c_2xe^x+c_3x^2e^x+c_4x^3e^x+c_5x^4e^x+c_6e^{-2x}+c_7xe^{-2x}$\\Annihilating $c_1,c_2,c_3$ and $c_6$, we have a solution of the form $ax^3e^x+bx^4e^x+cxe^{-2x}$\\
+		Plugging this in the ODE, we can get the values of \(a\), $b$ and \(c\) by comparing coefficients on both sides (due to linear independence)\\
+		\textbf{Incomplete : Do this}\\
+		Answer is $a=-\frac{1}{54}, b=\frac{1}{72}, c=-\frac{2}{27}$
+		
+	\end{enumerate}
+
+	\item Solve the following differential equations
+	\begin{enumerate}
+		\item $x^2y''+2xy'+y=x^3$\\
+		Finding a complementary solution, we have $m(m-1)+2m+1=0$\\
+		or, $m^2+m+1=0 \implies m=\frac{-1\pm i\sqrt{3}}{2}=\omega, \omega^2$\\
+		$\implies$ the complementary solution is $y_1=c_1\frac{\sin (\frac{\sqrt{3}}{2}\ln x)}{\sqrt{x}}+c_2\frac{\cos (\frac{\sqrt{3}}{2}\ln x)}{\sqrt{x}}$
+		Rewriting the differential equation, we get,\\
+		$y''+\frac{2}{x}y'+\frac{1}{x^2}y=x$\\
+		Now apply variation of parameters on the complementary solution to get the particular solution $y_p$. Then the general solution is $y=y_1+y_p$\\
+		Alternatively, since RHS is $x^3$, we can guess a particular solution to be $cx^3$ and get the value of $c$.\\
+		Answer is $y_p=\frac{x^3}{13}$
+	
+		\item Proceed similarly as the above problem.
+	\end{enumerate}
+
+	\item Find a particular solution of the folllowing inhomogeneous Cauchy-Euler equations.
+	\begin{enumerate}
+		\item $x^2y''-6y=\ln x$\\
+		Put $y=c\ln x + d$\\
+		$\implies -c-6c\ln x -6d=\ln x$\\
+		$\implies c=-\frac{1}{6}, d=\frac{1}{36}$
+	\end{enumerate}
 	
 \end{enumerate}
 
